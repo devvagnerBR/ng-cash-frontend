@@ -3,7 +3,7 @@ import './styles/reset.scss'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>Project here</h1>
     </div>
   );
