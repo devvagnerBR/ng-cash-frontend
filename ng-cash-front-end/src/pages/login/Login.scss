@@ -46,11 +46,47 @@
 }
 
 .login-form {
-	label {
+	height: 320px;
+	position: relative;
+
+	.btn-entrar-container {
 		display: flex;
 		flex-direction: column;
-		font-weight: 600;
-		font-size: 1rem;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+
+		p {
+			text-align: end;
+			padding-bottom: 5px;
+			font-size: 0.8rem;
+			font-weight: 600;
+			font-family: "IBM Plex Sans", sans-serif;
+
+			span {
+				color: $purple;
+				font-family: "IBM Plex Sans", sans-serif;
+				font-weight: 700;
+				cursor: pointer;
+			}
+		}
+		.btn {
+			height: 40px;
+			border: 1px solid $black;
+			border-radius: 5px;
+			font-weight: 600;
+			font-size: 1.1rem;
+			font-family: "IBM Plex Sans", sans-serif;
+
+			box-shadow: 3px 3px 0px 2px $purple;
+			border: 1px solid black;
+			box-shadow: 3px 3px 0px 2px $purple, 5px 5px 0px 1px $black;
+			cursor: pointer;
+
+			&:hover{
+				background: red;
+			}
+		}
 	}
 }
 

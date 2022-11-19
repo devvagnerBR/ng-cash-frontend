@@ -56,6 +56,11 @@ const Login = () => {
 
                         />
 
+                        <section className="btn-entrar-container">
+                            <p>ainda não tem uma conta? <span>criar agora!</span></p>
+                            <button className="btn">entrar</button>
+                        </section>
+
                     </form>
                 </section>
             </section>
