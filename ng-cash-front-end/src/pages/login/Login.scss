@@ -83,8 +83,8 @@
 			box-shadow: 3px 3px 0px 2px $purple, 5px 5px 0px 1px $black;
 			cursor: pointer;
 
-			&:hover{
-				background: red;
+			&:active {
+				background: rgb(206, 206, 206);
 			}
 		}
 	}
