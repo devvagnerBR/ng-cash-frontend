@@ -1,0 +1,56 @@
+.input {
+	display: flex;
+	flex-direction: column;
+	height: 92px;
+	position: relative;
+	width: 100%;
+	.label {
+		padding-bottom: 10px;
+		font-weight: 600;
+	}
+	input {
+		position: relative;
+		height: 40px;
+		border: 1px solid $black;
+		border-radius: 5px;
+		padding-left: 10px;
+		font-family: "IBM Plex Sans", sans-serif;
+		outline: none;
+		font-weight: 700;
+		font-size: 1.08rem;
+
+		&:focus &::placeholder {
+			font-size: 1rem;
+		}
+
+		&::placeholder {
+			color: rgb(102, 102, 102);
+		}
+	}
+}
+
+.password-container {
+	display: flex;
+	align-items: center;
+
+	.input-password {
+		width: 85%;
+		border-right: none;
+		border-bottom-right-radius: 0px;
+		border-top-right-radius: 0px;
+	}
+
+	.eye-icon {
+		cursor: pointer;
+		display: flex;
+		width: calc(40px - 2px);
+
+		border: 1px solid $black;
+		border-left: none;
+		height: calc(100% - 2px);
+		align-items: center;
+		justify-content: center;
+		border-bottom-right-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+}

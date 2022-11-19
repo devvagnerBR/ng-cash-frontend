@@ -1,11 +1,11 @@
 import React from 'react';
-import './styles/reset.scss'
+import './styles/styles.scss'
+
+import Router from './routes/Routes';
 
 function App() {
   return (
-    <div>
-      <h1>Project here</h1>
-    </div>
+    <Router />
   );
 }
 

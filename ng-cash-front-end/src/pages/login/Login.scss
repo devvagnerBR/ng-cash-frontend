@@ -1,0 +1,58 @@
+.grid-login-signup {
+	display: grid;
+	grid-template-columns: 3fr 400px;
+}
+
+.banner-side {
+	background: $black;
+}
+.form-side {
+	display: grid;
+	grid-template-rows: 1fr 2.5fr;
+}
+
+.form-header {
+	background-size: cover;
+	background-image: url(../../assets/ng-banner.png);
+}
+
+.grid-login {
+	background: $white;
+	grid-template-rows: 1fr 1fr 2fr;
+	padding: 25px;
+}
+
+.login-title {
+	min-height: 130px;
+	display: flex;
+	flex-direction: column;
+	h1 {
+		font-size: 2.8rem;
+		font-family: "IBM Plex Sans", sans-serif;
+	}
+	p {
+		display: flex;
+		align-items: center;
+		height: 35px;
+		font-weight: 600;
+		font-family: "IBM Plex Mono", monospace;
+		font-size: 1.1rem;
+		span {
+			color: $purple;
+			font-weight: 700;
+			padding-right: 10px;
+		}
+	}
+}
+
+.login-form {
+	label {
+		display: flex;
+		flex-direction: column;
+		font-weight: 600;
+		font-size: 1rem;
+	}
+}
+
+//font-family: 'IBM Plex Mono', monospace;
+//font-family: 'IBM Plex Sans', sans-serif;
