@@ -13,7 +13,7 @@ const Input = ( { placeholder, error, label, onChange, name, onBlur, password, t
 
         return (
 
-            <div className='input'>
+            <div className='input animeLeft'>
                 <label className='label'
                     htmlFor={name}>
                     {label}

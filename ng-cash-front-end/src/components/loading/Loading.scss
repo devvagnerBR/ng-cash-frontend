@@ -1,0 +1,13 @@
+.loading-container {
+	position: relative;
+	min-width: 100vw;
+	min-height: 100vh;
+	background: $black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url(../../assets/loadingNgCashBlack.gif);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
