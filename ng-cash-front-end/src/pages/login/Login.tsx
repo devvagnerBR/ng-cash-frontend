@@ -1,21 +1,31 @@
 import React from "react"
-import { useLocation } from "react-router-dom"
 import Input from "../../components/Input/Input"
+import UsernameValidate from './../../hooks/usernameValidate';
 
 
 const Login = () => {
 
-    const initialState = {
-        username: '',
-        password: ''
-    }
+    // const initialState = {
+    //     username: '',
+    //     password: ''
+    // }
 
-    const [values, setValues] = React.useState( initialState )
+    const username = UsernameValidate()
+    // const password = UsernameValidate()
+
+    // const handleChanges = ( event: React.ChangeEvent<HTMLInputElement> ) => {
+    //     setValues( { ...values, [event.target.name]: event.target.value } )
+    // }
 
 
-    const handleChanges = ( event: React.ChangeEvent<HTMLInputElement> ) => {
-        setValues( { ...values, [event.target.name]: event.target.value } )
-    }
+    // const handleSubmit = ( event: React.ChangeEvent<HTMLInputElement> ) => {
+    //     event.preventDefault()
+
+    // }
+
+
+
+
 
     return (
         <div className="container-size grid-login-signup">
@@ -34,28 +44,36 @@ const Login = () => {
                     <form action="" className="login-form">
 
                         <Input
-                            placeholder={'Neox'}
-                            type={'email'}
-                            label={'Nome de usuário'}
-                            name={'username'}
-                            onChange={handleChanges}
-                            value={values.username}
-                            onBlur={values.username}
+                            placeholder="@Neox"
+                            label='Nome de usuário'
+                            type="text"
+                            name="username"
+                            password={false}
+                            {...username}
+                        // placeholder={'Neox'}
+                        // type={'text'}
+                        // label={'Nome de usuário'}
+                        // name={'username'}
+                        // required
+                        // password={true}
+                        // // onChange={onChange}
+                        // {...username}
+
                         />
 
-                        <Input
+                        {/* <Input
 
                             placeholder={'sua senha'}
                             type={'password'}
                             label={'Senha'}
                             name={'password'}
-                            onChange={handleChanges}
-                            value={values.password}
+                            // onChange={handleChanges}
+                            // value={values.password}
                             password={true}
+                            required
 
 
-
-                        />
+                        /> */}
                         <section className="btn-login-container">
                             <p>ainda não tem uma conta? <span>criar agora!</span></p>
                             <button className="btn">entrar</button>

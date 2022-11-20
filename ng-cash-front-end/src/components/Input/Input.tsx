@@ -1,14 +1,16 @@
 import React from 'react';
-import { INPUT_PROPS } from '../../services/interfaces/IUser';
+import { inputProps } from '../../services/interfaces/IUser';
 import eye from '../../assets/icons/eye.png'
-import ValidateInputs from '../../hooks/useValidation';
 
 
-const Input = ( { onChange, onBlur, name, label, password = false, placeholder, value, type = 'text' }: INPUT_PROPS ) => {
+
+const Input = ( { placeholder, error, label, onChange, name, onBlur, password, type = 'text' }: inputProps ) => {
+
+    // const Input = ( { onChange, onBlur, error, name, label, password = false, placeholder, type = 'text', ...props }: inputProps ) => {
 
     const [showPassword, setShowPassword] = React.useState( false )
 
-    const { usernameValidate, message } = ValidateInputs()
+
 
     // React.useEffect( () => {
 
@@ -17,12 +19,6 @@ const Input = ( { onChange, onBlur, name, label, password = false, placeholder, 
     //     } else console.log( 'username ok' );
 
     // }, [usernameValidate] )
-
-
-
-
-
-
 
 
     if ( !password ) {
@@ -36,15 +32,14 @@ const Input = ( { onChange, onBlur, name, label, password = false, placeholder, 
                 </label>
 
                 <input
-                    onBlur={() => usernameValidate( onBlur )}
-                    placeholder={placeholder}
-                    type={type}
-                    name={name}
                     id={name}
+                    placeholder={placeholder}
+                    name={name}
+                    type={type}
                     onChange={onChange}
-                    value={value}
+                    onBlur={onBlur}
                 />
-                <p>{message}</p>
+                <p>{error}</p>
             </div>
 
         )
@@ -58,14 +53,14 @@ const Input = ( { onChange, onBlur, name, label, password = false, placeholder, 
                 </label>
 
                 <div className='password-container'>
-                    <input className='input-password'
+                    {/* <input className='input-password'
                         placeholder={placeholder}
                         type={showPassword ? 'text' : 'password'}
                         name={name}
                         id={name}
                         onChange={onChange}
                         value={value}
-                    />
+                    /> */}
                     <div className='eye-icon'>
                         <img onClick={() => setShowPassword( !showPassword )} src={eye} alt="icon" />
                     </div>

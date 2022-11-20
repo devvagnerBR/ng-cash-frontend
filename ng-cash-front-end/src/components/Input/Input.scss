@@ -27,6 +27,14 @@
 			color: rgb(102, 102, 102);
 		}
 	}
+
+	p {
+		padding-top: 5px;
+		text-align: end;
+		font-size: 0.7rem;
+		color: $purple;
+		font-weight: 700;
+	}
 }
 
 .password-container {
