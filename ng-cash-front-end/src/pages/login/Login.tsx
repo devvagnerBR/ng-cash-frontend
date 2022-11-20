@@ -1,29 +1,23 @@
 import React from "react"
 import Input from "../../components/Input/Input"
-import UsernameValidate from './../../hooks/usernameValidate';
+import PasswordValidate from "../../hooks/PasswordValidate"
+import UsernameValidate from "../../hooks/UsernameValidate"
+
 
 
 const Login = () => {
 
-    // const initialState = {
-    //     username: '',
-    //     password: ''
-    // }
-
     const username = UsernameValidate()
-    // const password = UsernameValidate()
-
-    // const handleChanges = ( event: React.ChangeEvent<HTMLInputElement> ) => {
-    //     setValues( { ...values, [event.target.name]: event.target.value } )
-    // }
+    const password = PasswordValidate()
 
 
-    // const handleSubmit = ( event: React.ChangeEvent<HTMLInputElement> ) => {
-    //     event.preventDefault()
+    const handleSubmit = ( event: React.FormEvent<HTMLFormElement> ) => {
+        event.preventDefault()
 
-    // }
-
-
+        if ( username.validate() && password.validate() ) {
+            window.alert( 'FOI, AMEM' )
+        }
+    }
 
 
 
@@ -41,39 +35,24 @@ const Login = () => {
                         <h1>Login</h1>
                         <p>Bem vind <span>x</span>de volta</p>
                     </section>
-                    <form action="" className="login-form">
+                    <form onSubmit={handleSubmit} className="login-form">
 
                         <Input
                             placeholder="@Neox"
                             label='Nome de usuário'
                             type="text"
                             name="username"
-                            password={false}
                             {...username}
-                        // placeholder={'Neox'}
-                        // type={'text'}
-                        // label={'Nome de usuário'}
-                        // name={'username'}
-                        // required
-                        // password={true}
-                        // // onChange={onChange}
-                        // {...username}
-
+                        />
+                        <Input
+                            placeholder="@Neox"
+                            label='Sua senha'
+                            type="password"
+                            name="password"
+                            password={true}
+                            {...password}
                         />
 
-                        {/* <Input
-
-                            placeholder={'sua senha'}
-                            type={'password'}
-                            label={'Senha'}
-                            name={'password'}
-                            // onChange={handleChanges}
-                            // value={values.password}
-                            password={true}
-                            required
-
-
-                        /> */}
                         <section className="btn-login-container">
                             <p>ainda não tem uma conta? <span>criar agora!</span></p>
                             <button className="btn">entrar</button>
