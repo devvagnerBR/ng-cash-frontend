@@ -1,7 +1,9 @@
 import React from "react"
+import { NavLink, useNavigate } from "react-router-dom"
 import Input from "../../components/Input/Input"
 import PasswordValidate from "../../hooks/PasswordValidate"
 import UsernameValidate from "../../hooks/UsernameValidate"
+import { GO_T0_SIGNUP } from './../../routes/coordinator';
 
 
 
@@ -9,17 +11,15 @@ const Login = () => {
 
     const username = UsernameValidate()
     const password = PasswordValidate()
-
+    const navigate = useNavigate()
 
     const handleSubmit = ( event: React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault()
 
         if ( username.validate() && password.validate() ) {
-            window.alert( 'FOI, AMEM' )
+            return window.alert( 'FOI, AMEM' )
         }
     }
-
-
 
     return (
         <div className="container-size grid-login-signup">
@@ -54,7 +54,7 @@ const Login = () => {
                         />
 
                         <section className="btn-login-container">
-                            <p>ainda não tem uma conta? <span>criar agora!</span></p>
+                            <p>ainda não tem uma conta? <span onClick={() => GO_T0_SIGNUP( navigate )}>criar agora!</span></p>
                             <button className="btn">entrar</button>
                         </section>
 

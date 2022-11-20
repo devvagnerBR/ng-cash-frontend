@@ -6,7 +6,7 @@ import React from 'react'
 const UsernameValidate = () => {
 
     const regexWhiteSpace = /^(?=.*\s)/
-
+    const regexSpecialCharacter = /[^a-zA-Z0-9]+/g
     const [data, setData] = React.useState<string>( '' )
     const [error, setError] = React.useState<string | null | undefined>( null )
 
@@ -21,6 +21,9 @@ const UsernameValidate = () => {
             return false
         } else if ( regexWhiteSpace.test( username ) ) {
             setError( 'Não é permitido espaço em branco' )
+            return false
+        } else if ( regexSpecialCharacter.test( username ) ) {
+            setError( 'Não é permitido caracteres especiais' )
             return false
         } else {
             setError( null )

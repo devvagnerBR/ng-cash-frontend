@@ -1,11 +1,10 @@
 // RESET
 @import "./reset.scss";
-@import './colors.scss';
+@import "./colors.scss";
 @import "./common.scss";
-@import '../components/Input/Input.scss';
+@import "../components/Input/Input.scss";
 // COLORS
-
 
 // PAGES
 @import "../pages/login/Login.scss";
-
+@import "../pages//signup/Signup.scss";

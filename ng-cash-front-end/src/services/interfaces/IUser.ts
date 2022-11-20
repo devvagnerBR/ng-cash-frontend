@@ -36,4 +36,5 @@ export interface inputProps {
     onChange?: ( event: React.ChangeEvent<HTMLInputElement> ) => void
     onBlur?: React.FocusEventHandler<HTMLInputElement>
     password?: boolean
+    showPass?:  any
 }
