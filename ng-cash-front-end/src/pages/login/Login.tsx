@@ -12,7 +12,7 @@ const Login = () => {
 
     const [values, setValues] = React.useState( initialState )
 
-    
+
     const handleChanges = ( event: React.ChangeEvent<HTMLInputElement> ) => {
         setValues( { ...values, [event.target.name]: event.target.value } )
     }
@@ -40,11 +40,12 @@ const Login = () => {
                             name={'username'}
                             onChange={handleChanges}
                             value={values.username}
+                            onBlur={values.username}
                         />
 
                         <Input
 
-                            placeholder={'****'}
+                            placeholder={'sua senha'}
                             type={'password'}
                             label={'Senha'}
                             name={'password'}
@@ -52,9 +53,10 @@ const Login = () => {
                             value={values.password}
                             password={true}
 
-                        />
 
-                        <section className="btn-entrar-container">
+
+                        />
+                        <section className="btn-login-container">
                             <p>ainda não tem uma conta? <span>criar agora!</span></p>
                             <button className="btn">entrar</button>
                         </section>

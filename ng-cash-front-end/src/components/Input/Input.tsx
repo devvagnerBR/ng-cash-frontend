@@ -1,10 +1,29 @@
 import React from 'react';
 import { INPUT_PROPS } from '../../services/interfaces/IUser';
 import eye from '../../assets/icons/eye.png'
+import ValidateInputs from '../../hooks/useValidation';
 
-const Input = ( { onChange, name, label, password = false, placeholder, value, type = 'text' }: INPUT_PROPS ) => {
+
+const Input = ( { onChange, onBlur, name, label, password = false, placeholder, value, type = 'text' }: INPUT_PROPS ) => {
 
     const [showPassword, setShowPassword] = React.useState( false )
+
+    const { usernameValidate, message } = ValidateInputs()
+
+    // React.useEffect( () => {
+
+    //     if ( !usernameValidate( value ) ) {
+    //         console.log( message );
+    //     } else console.log( 'username ok' );
+
+    // }, [usernameValidate] )
+
+
+
+
+
+
+
 
     if ( !password ) {
 
@@ -17,6 +36,7 @@ const Input = ( { onChange, name, label, password = false, placeholder, value, t
                 </label>
 
                 <input
+                    onBlur={() => usernameValidate( onBlur )}
                     placeholder={placeholder}
                     type={type}
                     name={name}
@@ -24,6 +44,7 @@ const Input = ( { onChange, name, label, password = false, placeholder, value, t
                     onChange={onChange}
                     value={value}
                 />
+                <p>{message}</p>
             </div>
 
         )

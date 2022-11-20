@@ -17,13 +17,16 @@
 }
 
 .grid-login {
+	display: flex;
+	flex-direction: column;
 	background: $white;
-	grid-template-rows: 1fr 1fr 2fr;
 	padding: 25px;
+	//background: green;
 }
 
 .login-title {
 	min-height: 130px;
+	//background: orange;
 	display: flex;
 	flex-direction: column;
 	h1 {
@@ -46,10 +49,10 @@
 }
 
 .login-form {
-	height: 320px;
+	height: 300px;
 	position: relative;
-
-	.btn-entrar-container {
+	//background: tomato;
+	.btn-login-container {
 		display: flex;
 		flex-direction: column;
 		position: absolute;
@@ -71,16 +74,16 @@
 			}
 		}
 		.btn {
-			height: 40px;
+			height: 45px;
 			border: 1px solid $black;
 			border-radius: 5px;
 			font-weight: 600;
 			font-size: 1.1rem;
 			font-family: "IBM Plex Sans", sans-serif;
 
-			box-shadow: 3px 3px 0px 2px $purple;
+
 			border: 1px solid black;
-			box-shadow: 3px 3px 0px 2px $purple, 5px 5px 0px 1px $black;
+			box-shadow: 2px 3px 0px 2px $purple, 4px 5px 0px 1px $black;
 			cursor: pointer;
 
 			&:active {
