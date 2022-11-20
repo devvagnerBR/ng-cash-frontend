@@ -12,6 +12,7 @@ const Login = () => {
 
     const [values, setValues] = React.useState( initialState )
 
+    
     const handleChanges = ( event: React.ChangeEvent<HTMLInputElement> ) => {
         setValues( { ...values, [event.target.name]: event.target.value } )
     }
@@ -30,9 +31,6 @@ const Login = () => {
                         <h1>Login</h1>
                         <p>Bem vind <span>x</span>de volta</p>
                     </section>
-
-
-
                     <form action="" className="login-form">
 
                         <Input
