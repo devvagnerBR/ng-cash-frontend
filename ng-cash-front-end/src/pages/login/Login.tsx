@@ -2,8 +2,9 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import Input from "../../components/Input/Input"
 import Loading from "../../components/loading/Loading"
-import PasswordValidate from "../../hooks/PasswordValidate"
-import UsernameValidate from "../../hooks/UsernameValidate"
+import PasswordValidate from "../../hooks/validadePassword"
+import UsernameValidate from "../../hooks/validateUsername"
+
 import { GO_T0_SIGNUP, GO_TO_HOMEPAGE } from './../../routes/coordinator';
 
 
@@ -48,7 +49,7 @@ const Login = () => {
 
 
                 <section className="banner-side" >
-                    
+
 
                 </section>
 

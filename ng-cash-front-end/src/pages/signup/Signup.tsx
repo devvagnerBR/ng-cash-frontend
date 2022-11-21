@@ -1,9 +1,9 @@
 import React from "react";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input/Input";
 import Loading from "../../components/loading/Loading";
-import PasswordValidate from "../../hooks/PasswordValidate";
-import UsernameValidate from "../../hooks/UsernameValidate";
+import PasswordValidate from "../../hooks/validadePassword";
+import UsernameValidate from "../../hooks/validateUsername";
 import { GO_T0_LOGIN, GO_TO_HOMEPAGE } from "./../../routes/coordinator";
 
 const Signup = () => {
