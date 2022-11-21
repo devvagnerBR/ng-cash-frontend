@@ -7,7 +7,7 @@
 	background: $light-grey;
 	border-radius: 4px;
 	width: auto;
-	height: 85%;
+	height: 80%;
 	overflow: hidden;
 
 	.filter-history {
@@ -88,10 +88,27 @@
 		flex-direction: column;
 
 		.transactions-container {
-			overflow-y: scroll;
 			display: flex;
 			flex-direction: column;
+			overflow-y: scroll;
 			gap: 10px;
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+			width: 2px;
+			height: 2px;
+		}
+
+		&::-webkit-scrollbar-track {
+			height: 2px;
+			width: 3px;
+			color: red;
+		}
+		&::-webkit-scrollbar-thumb {
+			width: 30px;
+			color: blue;
+			height: 20px;
 		}
 	}
 }

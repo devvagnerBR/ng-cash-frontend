@@ -8,6 +8,11 @@ import Transactions from '../transactions/Transactions'
 
 const Homepage = () => {
 
+    const username = JSON.parse( `${localStorage.getItem( 'username' )}` );
+
+
+
+
     return (
         <div className='container-size grid-homepage'>
 
@@ -37,7 +42,7 @@ const Homepage = () => {
                         <img src={nglogo} alt="" />
 
                         <h1>WAGNER GUIMARAES</h1>
-                        <h1 id='number-card-homepage'>0000 0000 0000 0000</h1>
+                        <h1 id='number-card-homepage'>5469 9707 0795 8552</h1>
                     </main>
                     <p>MODALIDADE: <span>DÉBITO</span> </p>
 
@@ -51,10 +56,10 @@ const Homepage = () => {
             </aside>
 
             <main className='main-content-homepage'>
-                
+
                 <header className='header-homepage'>
                     <img src={nglogo} alt="" />
-                    <h2> <span>@</span>Alanzoka</h2>
+                    <h2> <span>@</span>{username}</h2>
                 </header>
 
                 <Routes>

@@ -1,23 +1,44 @@
-import React from 'react'
 import moneyIcon from '../../assets/icons/moneyIcon.png'
-const TransactionItem = () => {
+import React from 'react';
+import { convertRoutesToDataRoutes } from '@remix-run/router/dist/utils';
+
+
+
+
+const TransactionItem = ( { item }: any ) => {
+
+    const [time, setTime] = React.useState( '' )
+
+
+    const convertDate = () => {
+        const step1 = item.date_transaction
+        const step2 = new Date( step1 )
+        const result = step2.toLocaleDateString( 'pt-BR' )
+        return result
+
+    }
+
+
     return (
         <div className='item-container-transaction'>
             <section className='icon-transaction'>
                 <img src={moneyIcon} alt="" />
             </section>
             <section className='infos-transaction'>
-                <h2>Transferência realizada pra @Neox</h2>
-                <h3>dinheiro do drone</h3>
+                <h2>Transferência {item.type_transaction === 'cash-in' ? 'recebida de' : 'realizada para'} @{item.user}</h2>
+                <h3>{item.tag}</h3>
                 <h5>aprovado</h5>
             </section>
             <section className='values-transaction'>
-                <h2>20 Ago</h2>
-                <h3>- R$ 570,00</h3>
+                <h2>{convertDate()}</h2>
+                <h3 style={item.type_transaction === 'cash-in' ? { color: ' green' } : { color: 'red' }} >- {item?.value.toLocaleString( 'pt-BR', { style: 'currency', currency: 'BRL' } )}</h3>
             </section>
 
-        </div>
+        </div >
     )
 }
 
 export default TransactionItem
+
+// realizada pra
+// recebida de
