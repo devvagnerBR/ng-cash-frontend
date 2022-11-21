@@ -51,10 +51,12 @@ const Homepage = () => {
             </aside>
 
             <main className='main-content-homepage'>
+                
                 <header className='header-homepage'>
                     <img src={nglogo} alt="" />
                     <h2> <span>@</span>Alanzoka</h2>
                 </header>
+
                 <Routes>
                     <Route path='/' element={<History />} />
                     <Route path='transferencia' element={<Transactions />} />

@@ -1,0 +1,81 @@
+.history-container {
+	display: flex;
+	margin: 20px;
+	align-items: stretch;
+	justify-content: center;
+	background: $light-grey;
+	border-radius: 4px;
+	width: auto;
+	height: 88%;
+	overflow: hidden;
+
+	.filter-history {
+		height: 100px;
+		background: $dark-grey;
+		width: 100%;
+
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+
+		.nav-filter {
+			background: pink;
+		}
+
+		.nav-title-history {
+			display: flex;
+			align-items: end;
+			justify-content: center;
+			margin-bottom: 10px;
+
+			h1 {
+				color: white;
+				font-weight: 400;
+			}
+
+			img {
+				width: 15px;
+				padding-left: 10px;
+				display: flex;
+			}
+		}
+
+		.nav-filter-history {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			padding-left: 30px;
+		}
+		.filters-history {
+			border-radius: 4px;
+			background: $light-grey;
+			height: 40px;
+			width: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			gap: 10px;
+
+			h3 {
+				font-size: 0.85rem;
+				padding-left: 10px;
+				color: white;
+				font-weight: 400;
+			}
+
+			select {
+				width: 200px;
+				margin-left: 10px;
+				border: none;
+				outline: none;
+				height: 30px;
+				border-radius: 5px;
+				font-weight: 600;
+				option {
+					background: $light-grey;
+					color: white;
+				}
+			}
+		}
+	}
+}
