@@ -46,7 +46,9 @@ const Login = () => {
 
             <div className="container-size grid-login-signup" >
 
+
                 <section className="banner-side" >
+                    
 
                 </section>
 

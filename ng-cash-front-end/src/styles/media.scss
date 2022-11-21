@@ -1,0 +1,46 @@
+@media (max-width: 500px) {
+	.banner-side {
+		display: none;
+	}
+	.banner-side-signup {
+		display: none;
+	}
+	.form-side {
+		grid-template-rows: 1.2fr 2.5fr;
+	}
+	.form-header {
+		background-image: url(../assets/loadingNgCashBlack.gif);
+		min-width: 100vw;
+		background-position: center center;
+		background-attachment: scroll;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	//SIGN UP
+
+	.signup-form {
+		min-width: 80vw;
+	}
+
+	.signup-title {
+		h1 {
+			font-size: 2rem;
+		}
+		p {
+			font-size: 1rem;
+			flex-wrap: wrap;
+		}
+	}
+	.form-side-signup {
+		display: flex;
+
+		align-items: stretch;
+		justify-content: center;
+		width: 100vw;
+	}
+
+	.input p{
+		font-size: 0.7rem;
+	}
+}

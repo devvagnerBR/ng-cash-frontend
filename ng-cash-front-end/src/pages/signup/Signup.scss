@@ -3,7 +3,7 @@
 	grid-template-columns: 3fr 400px;
 }
 
-.banner-side {
+.banner-side-signup {
 	background: $black;
 }
 .form-side-signup {
@@ -46,7 +46,7 @@
 	height: 600px;
 	position: relative;
 	//background: tomato;
-	.btn-login-container {
+	.btn-signup-container {
 		display: flex;
 		flex-direction: column;
 		position: absolute;

@@ -42,7 +42,7 @@ const Signup = () => {
     } else {
         return (
             <div className="container-size grid-login-signup">
-                <section className="banner-side"></section>
+                <section className="banner-side-signup"></section>
 
                 <section className="form-side-signup">
                     <section className="grid-signup">
@@ -64,9 +64,9 @@ const Signup = () => {
                             <section className="welcome">
                                 {showInputPassword ? (
                                     <div className="delay-container animeLeft">
-                                        <h1>E ai, {username.data}</h1>
+                                        <h1>E ai, {username.data}?</h1>
                                         <h2>
-                                            Crie uma senha para proteger sua conta Ela precisa ter{" "}
+                                            Crie uma senha para proteger sua conta, Ela precisa ter{" "}
                                             <span>
                                                 {" "}
                                                 8 caracteres ou mais e ao menos um número e uma letra
@@ -93,7 +93,7 @@ const Signup = () => {
                                 ) : null}
                             </section>
 
-                            <section className="btn-login-container">
+                            <section className="btn-signup-container">
                                 <p>
                                     já tem uma conta?{" "}
                                     <span onClick={() => GO_T0_LOGIN( navigate )}>entrar!</span>
