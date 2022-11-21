@@ -71,7 +71,7 @@ const Login = () => {
                             />
                             <Input
                                 placeholder="@Neox"
-                                label='Sua senha'
+                                label='Senha'
                                 type="password"
                                 name="password"
                                 password={true}
