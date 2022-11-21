@@ -8,7 +8,7 @@
 	width: 450px;
 	max-width: 450px;
 	display: grid;
-	grid-template-rows: auto auto 1fr;
+	grid-template-rows: auto auto auto 1fr;
 
 	.title-homepage {
 		min-height: 90px;
@@ -37,7 +37,7 @@
 				font-family: "IBM Plex Sans", sans-serif;
 				font-weight: 400;
 				font-size: 0.89rem;
-                padding-left: 10px;
+				padding-left: 10px;
 				letter-spacing: 0.7px;
 				color: white;
 			}
@@ -58,12 +58,129 @@
 					background: #5827b9;
 					padding: 3px 9px;
 					border-radius: 8px;
+					cursor: pointer;
+					&:active {
+						background: #3c148d;
+						transition: 0.25s ease-in-out;
+					}
+				}
+			}
+		}
+
+		.wallet-buttons {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 60px;
+			padding-top: 10px;
+
+			.btn {
+				min-width: 170px;
+				height: 45px;
+				border: 1px solid $black;
+				border-radius: 7px;
+				font-weight: 600;
+				font-size: 1.1rem;
+				font-family: "IBM Plex Sans", sans-serif;
+
+				border: 1px solid black;
+				box-shadow: 2px 3px 0px 2px $black, 4px 5px 0px 1px $white;
+				cursor: pointer;
+
+				&:active {
+					background: rgb(206, 206, 206);
+					height: 43px;
+					border: none;
 				}
 			}
 		}
 	}
 
 	.card-preview-homepage {
+		padding: 5px 10px;
+		height: 250px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		p {
+			align-items: stretch;
+			justify-content: center;
+			text-align: end;
+			width: 80%;
+			color: white;
+			font-size: 0.7rem;
+
+			span {
+				font-weight: 500;
+			}
+		}
+
+		.card-homepage {
+			background: $black;
+			margin: 15px;
+			width: 80%;
+			height: 80%;
+			border-radius: 10px;
+
+			img {
+				width: 80px;
+				position: relative;
+				left: 230px;
+				top: 60px;
+			}
+
+			h1 {
+				width: 320px;
+				font-weight: 400;
+				padding-left: 15px;
+				position: relative;
+				left: 0px;
+				top: 55px;
+				padding-top: 5px;
+				color: white;
+				font-family: "IBM Plex Sans", sans-serif;
+			}
+
+			#number-card-homepage {
+				font-size: 1.1rem;
+				padding-top: 10px;
+				top: 55px;
+			}
+		}
+	}
+
+	.logout-homepage {
+		height: 100%;
+
+		.icon-logout {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			bottom: 10px;
+			background: grey;
+			width: 85px;
+			height: 50px;
+			border-bottom-right-radius: 5px;
+			border-top-right-radius: 5px;
+			cursor: pointer;
+
+			&:hover {
+				width: 100px;
+				transition: 0.2 ease-in;
+			}
+			a {
+				color: $black;
+				font-weight: 600;
+				font-size: 0.8rem;
+				padding-left: 5px;
+			}
+			img {
+				width: 35px;
+			}
+		}
 	}
 }
 
