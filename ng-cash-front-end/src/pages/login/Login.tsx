@@ -70,7 +70,7 @@ const Login = () => {
                                 {...username}
                             />
                             <Input
-                                placeholder="@Neox"
+                                placeholder="sua senha aqui"
                                 label='Senha'
                                 type="password"
                                 name="password"

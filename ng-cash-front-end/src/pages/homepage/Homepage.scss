@@ -1,0 +1,73 @@
+.grid-homepage {
+	display: grid;
+	grid-template-columns: auto 1fr;
+}
+
+.wallet-container-homepage {
+	background: $dark-grey;
+	width: 450px;
+	max-width: 450px;
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+
+	.title-homepage {
+		min-height: 90px;
+		h1 {
+			text-align: end;
+			padding: 30px 50px;
+			font-size: 2rem;
+			color: white;
+			font-weight: 500;
+		}
+	}
+
+	.wallet-balance-homepage {
+		padding: 30px 50px;
+		height: 100px;
+
+		.balance-homepage {
+			background: $purple;
+			height: 40px;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0px 9px;
+			h4 {
+				font-family: "IBM Plex Sans", sans-serif;
+				font-weight: 400;
+				font-size: 0.89rem;
+                padding-left: 10px;
+				letter-spacing: 0.7px;
+				color: white;
+			}
+			.money-homepage {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 130px;
+				h3 {
+					font-size: 0.99rem;
+					color: white;
+
+					font-weight: 500;
+					font-family: "IBM Plex Sans", sans-serif;
+				}
+				img {
+					width: 22px;
+					background: #5827b9;
+					padding: 3px 9px;
+					border-radius: 8px;
+				}
+			}
+		}
+	}
+
+	.card-preview-homepage {
+	}
+}
+
+.main-content-homepage {
+	background: $dark-grey;
+	border-left: 1px solid rgb(65, 65, 65);
+}

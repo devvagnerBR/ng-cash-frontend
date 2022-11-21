@@ -74,7 +74,7 @@ const Signup = () => {
                                             </span>
                                         </h2>
                                         <Input
-                                            placeholder="@Neox"
+                                            placeholder="sua senha aqui"
                                             label="Sua senha"
                                             type="password"
                                             name="password"
@@ -82,7 +82,7 @@ const Signup = () => {
                                             {...password}
                                         />
                                         <Input
-                                            placeholder="@Neox"
+                                            placeholder="sua senha aqui"
                                             label="Sua senha"
                                             type="password"
                                             name="passwordConfirm"

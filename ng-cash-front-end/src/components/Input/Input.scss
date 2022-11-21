@@ -16,15 +16,17 @@
 		padding-left: 10px;
 		font-family: "IBM Plex Sans", sans-serif;
 		outline: none;
-		font-weight: 700;
+		font-weight: 600;
 		font-size: 1.08rem;
-
+		color: $purple;
 		&:focus &::placeholder {
 			font-size: 1rem;
 		}
 
 		&::placeholder {
-			color: rgb(102, 102, 102);
+			color: rgb(189, 189, 189);
+			font-size: 0.8rem;
+			font-weight: 500;
 		}
 	}
 
