@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import Input from "../../components/Input/Input";
 import Loading from "../../components/loading/Loading";
 import PasswordValidate from "../../hooks/PasswordValidate";
@@ -35,7 +35,7 @@ const Signup = () => {
                 setShowInputPassword( true );
             }, 1800 );
         }
-    }, [username.data] );
+    }, [username] );
 
     if ( showLoading ) {
         return <Loading />
