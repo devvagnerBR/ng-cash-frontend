@@ -33,22 +33,22 @@ const History = () => {
             </nav>
             <main className='transactions-history'>
 
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                    <TransactionItem />
-                 
-     
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+                <TransactionItem />
+
+
 
 
             </main>

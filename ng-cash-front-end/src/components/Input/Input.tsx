@@ -4,7 +4,7 @@ import eye from '../../assets/icons/eye.png'
 
 
 
-const Input = ( { placeholder, error, label, onChange, name, onBlur, password, type = 'text' }: inputProps ) => {
+const Input = ( { color, placeholder, error, label, onChange, name, onBlur, password, type = 'text' }: inputProps ) => {
 
     const [showPassword, setShowPassword] = React.useState( false )
 
@@ -14,12 +14,13 @@ const Input = ( { placeholder, error, label, onChange, name, onBlur, password, t
         return (
 
             <div className='input animeLeft'>
-                <label className='label'
+                <label id={color} className='label'
                     htmlFor={name}>
                     {label}
                 </label>
 
                 <input
+                    className={color}
                     id={name}
                     placeholder={placeholder}
                     name={name}
@@ -35,14 +36,15 @@ const Input = ( { placeholder, error, label, onChange, name, onBlur, password, t
         return (
 
             <div className='input'>
-                <label className='label'
+                <label className={`${'label'} ${color}`}
                     htmlFor={name}>
                     {label}
                 </label>
 
                 <div className='password-container'>
                     <input
-                        className='input-password'
+                        className={`${'input-password'} ${color}`}
+
                         id={name}
                         placeholder={placeholder}
                         name={name}

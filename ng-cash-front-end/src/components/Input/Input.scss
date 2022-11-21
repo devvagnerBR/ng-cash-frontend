@@ -6,7 +6,8 @@
 	width: 100%;
 	.label {
 		padding-bottom: 10px;
-		font-weight: 600;
+		font-weight: 500;
+		font-size: 0.81rem;
 	}
 	input {
 		position: relative;
@@ -63,4 +64,12 @@
 		border-bottom-right-radius: 5px;
 		border-top-right-radius: 5px;
 	}
+}
+
+#black  {
+	color: $black;
+}
+
+#white  {
+	color: $white;
 }

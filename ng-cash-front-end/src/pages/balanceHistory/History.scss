@@ -7,7 +7,7 @@
 	background: $light-grey;
 	border-radius: 4px;
 	width: auto;
-	height: 75%;
+	height: 85%;
 	overflow: hidden;
 
 	.filter-history {
@@ -50,7 +50,8 @@
 			border-radius: 4px;
 			background: $light-grey;
 			height: 40px;
-			width: 50%;
+			width: 80%;
+			max-width: 500px;
 			display: flex;
 			align-items: center;
 			justify-content: start;
@@ -70,6 +71,7 @@
 				outline: none;
 				height: 30px;
 				border-radius: 5px;
+
 				font-weight: 600;
 				option {
 					background: $light-grey;
@@ -79,5 +81,17 @@
 		}
 	}
 
-	
+	.transactions-history {
+		height: 71vh;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		.transactions-container {
+			overflow-y: scroll;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
 }
