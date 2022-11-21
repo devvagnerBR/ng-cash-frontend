@@ -74,19 +74,21 @@
 			height: 60px;
 			padding-top: 10px;
 
-			.btn {
+			a {
 				min-width: 170px;
 				height: 45px;
 				border: 1px solid $black;
 				border-radius: 7px;
 				font-weight: 600;
 				font-size: 1.1rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: white;
 				font-family: "IBM Plex Sans", sans-serif;
-
-				border: 1px solid black;
 				box-shadow: 2px 3px 0px 2px $black, 4px 5px 0px 1px $white;
 				cursor: pointer;
-
+				color: $black;
 				&:active {
 					background: rgb(206, 206, 206);
 					height: 43px;
@@ -109,7 +111,7 @@
 			justify-content: center;
 			text-align: end;
 			width: 80%;
-			color: white;
+			color: rgb(85, 85, 85);
 			font-size: 0.7rem;
 
 			span {
@@ -169,7 +171,7 @@
 
 			&:hover {
 				width: 100px;
-				transition: 0.2 ease-in;
+				transition: 0.9 ease-in-out;
 			}
 			a {
 				color: $black;
@@ -187,4 +189,28 @@
 .main-content-homepage {
 	background: $dark-grey;
 	border-left: 1px solid rgb(65, 65, 65);
+
+	.header-homepage {
+		height: 80px;
+		border-bottom: 1px solid rgb(82, 82, 82);
+		display: flex;
+		padding: 0px 20px;
+		align-items: center;
+		justify-content: space-between;
+
+		img {
+			width: 90px;
+		}
+
+		h2 {
+			font-weight: 500;
+			font-family: "IBM Plex Sans", sans-serif;
+			padding-right: 20px;
+			color: white;
+			letter-spacing: 1px;
+			span {
+				color: $purple;
+			}
+		}
+	}
 }

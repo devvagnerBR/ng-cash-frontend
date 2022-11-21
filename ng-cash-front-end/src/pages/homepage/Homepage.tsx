@@ -2,6 +2,10 @@ import React from 'react'
 import eyeBalance from '../../assets/icons/eyeBalance.png'
 import nglogo from '../../assets/nglogo.png'
 import logout from '../../assets/icons/logout.png'
+import { Routes, Route, NavLink } from 'react-router-dom'
+import History from '../balanceHistory/History'
+import Transactions from '../transactions/Transactions'
+
 const Homepage = () => {
 
     return (
@@ -22,8 +26,8 @@ const Homepage = () => {
                         </div>
                     </main>
                     <nav className='wallet-buttons'>
-                        <button className='btn' >transferir</button>
-                        <button className='btn' >atividade</button>
+                        <NavLink to="transferencia" className='navlink' >transferir</NavLink>
+                        <NavLink to='/conta' className='navlink' >atividade</NavLink>
                     </nav>
                 </section>
 
@@ -35,7 +39,7 @@ const Homepage = () => {
                         <h1>WAGNER GUIMARAES</h1>
                         <h1 id='number-card-homepage'>0000 0000 0000 0000</h1>
                     </main>
-                    <p>modalidade: <span>DÉBITO</span> </p>
+                    <p>MODALIDADE: <span>DÉBITO</span> </p>
 
                 </section>
                 <section className='logout-homepage'>
@@ -47,6 +51,15 @@ const Homepage = () => {
             </aside>
 
             <main className='main-content-homepage'>
+                <header className='header-homepage'>
+                    <img src={nglogo} alt="" />
+                    <h2> <span>@</span>Alanzoka</h2>
+                </header>
+                <Routes>
+                    <Route path='/' element={<History />} />
+                    <Route path='transferencia' element={<Transactions />} />
+                </Routes>
+
 
             </main>
         </div>
