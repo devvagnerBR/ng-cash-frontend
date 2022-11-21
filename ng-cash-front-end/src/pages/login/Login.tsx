@@ -16,10 +16,16 @@ const Login = () => {
     const password = PasswordValidate()
     const navigate = useNavigate()
 
-    const handleSubmit = ( event: React.FormEvent<HTMLFormElement> ) => {
-        event.preventDefault()
 
+    const handleSubmit = ( event: React.FormEvent<HTMLFormElement> ) => {
+
+
+
+        event.preventDefault()
         if ( username.validate() && password.validate() ) {
+
+            window.localStorage.setItem( 'username', JSON.stringify( username.data ) )
+            window.localStorage.setItem( 'password', JSON.stringify( password.data ) )
             setShowLoading( true )
             setTimeout( () => {
                 GO_TO_HOMEPAGE( navigate )
