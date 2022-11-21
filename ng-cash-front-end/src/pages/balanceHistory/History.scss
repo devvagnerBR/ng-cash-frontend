@@ -2,30 +2,30 @@
 	display: flex;
 	margin: 20px;
 	align-items: stretch;
-	justify-content: center;
+	justify-content: start;
+	flex-direction: column;
 	background: $light-grey;
 	border-radius: 4px;
 	width: auto;
-	height: 88%;
+	height: 75%;
 	overflow: hidden;
 
 	.filter-history {
 		height: 100px;
 		background: $dark-grey;
 		width: 100%;
-
 		display: grid;
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: 3fr auto;
 
-		.nav-filter {
-			background: pink;
-		}
+		// .nav-filter {
+		// }
 
 		.nav-title-history {
 			display: flex;
 			align-items: end;
+			padding-right: 30px;
 			justify-content: center;
-			margin-bottom: 10px;
+			padding-bottom: 10px;
 
 			h1 {
 				color: white;
@@ -78,4 +78,6 @@
 			}
 		}
 	}
+
+	
 }

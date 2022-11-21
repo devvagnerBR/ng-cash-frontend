@@ -1,5 +1,6 @@
 import React from 'react'
 import arrowDown from '../../assets/icons/arrowdown.png'
+import TransactionItem from '../../components/transaction-item/TransactionItem'
 const History = () => {
 
 
@@ -11,7 +12,6 @@ const History = () => {
                 <section className='nav-filter-history'>
                     <nav className='filters-history'>
                         <h3>filtros:</h3>
-
                         <select name="gastos" id="gastos">
                             <option disabled value="">filtrar historico</option>
                             <option value="">todos</option>
@@ -31,6 +31,27 @@ const History = () => {
                     <img src={arrowDown} alt="" />
                 </section>
             </nav>
+            <main className='transactions-history'>
+
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                    <TransactionItem />
+                 
+     
+
+
+            </main>
         </div>
     )
 }

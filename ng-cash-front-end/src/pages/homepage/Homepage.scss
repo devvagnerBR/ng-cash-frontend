@@ -189,7 +189,9 @@
 .main-content-homepage {
 	background: $dark-grey;
 	border-left: 1px solid rgb(65, 65, 65);
-
+	//background: red;
+	width: auto;
+	height: 100%;
 
 	.header-homepage {
 		height: 80px;

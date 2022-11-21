@@ -1,0 +1,93 @@
+.transactions-history {
+	// height: 71vh;
+	// width: 100%;
+	// display: flex;
+	// flex-direction: column;
+	height: 70vh;
+	overflow-y: scroll;
+
+	.transactions-container {
+		overflow-y: scroll;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		height: 90vh;
+	}
+}
+.item-container-transaction {
+	// border-bottom: 1px solid rgb(48, 47, 47);
+	// height: 100px;
+	// justify-content: center;
+	// display: flex;
+	// width: 100%;
+
+	// flex-direction: column;
+
+	//background-color: tomato;
+	height: calc(100px - 2px);
+	width: calc(100% - 20px);
+	border-bottom: 1px solid grey;
+	padding: 10px 10px;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+
+	.icon-transaction {
+		width: 70px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			width: 35px;
+		}
+	}
+
+	.infos-transaction {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: center;
+
+		h2 {
+			font-size: 0.8rem;
+			color: white;
+			font-weight: 500;
+		}
+
+		h3 {
+			font-size: 0.8rem;
+			color: rgb(112, 112, 112);
+			font-weight: 300;
+			padding-top: 8px;
+		}
+
+		h5 {
+			font-size: 0.8rem;
+			color: white;
+			font-weight: 400;
+			padding-top: 8px;
+		}
+	}
+
+	.values-transaction {
+		//background: tomato;
+		width: 150px;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		flex-direction: column;
+
+		h2 {
+			color: white;
+			font-weight: 400;
+			font-size: 0.8rem;
+		}
+
+		h3 {
+			color: rgb(9, 112, 9);
+			font-weight: 400;
+			font-size: 0.8rem;
+		}
+	}
+}
