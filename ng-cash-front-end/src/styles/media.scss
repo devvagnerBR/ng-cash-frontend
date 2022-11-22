@@ -5,12 +5,18 @@
 	.banner-side-signup {
 		display: none;
 	}
-	.banner-side-container{
+	.banner-side-container {
 		display: none;
 	}
 	.form-side {
 		grid-template-rows: 1.2fr 2.5fr;
 	}
+	.grid-signup {
+		width: 90vw;
+		height: 94vh;
+		padding: 24px;
+	}
+
 	.form-header {
 		background-image: url(../assets/loadingNgCashBlack.gif);
 		min-width: 100vw;
@@ -37,10 +43,10 @@
 	}
 	.form-side-signup {
 		display: flex;
-
-		align-items: stretch;
+		align-items: center;
 		justify-content: center;
 		width: 100vw;
+		height: 100vh;
 	}
 
 	.input p {
