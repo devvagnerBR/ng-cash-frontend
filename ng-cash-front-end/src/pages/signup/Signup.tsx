@@ -6,6 +6,9 @@ import PasswordValidate from "../../hooks/validadePassword";
 import UsernameValidate from "../../hooks/validateUsername";
 import { GO_T0_LOGIN, GO_TO_HOMEPAGE } from "./../../routes/coordinator";
 import { v4 as uuidv4 } from 'uuid'
+import app from '../../assets/app.png'
+import applestore from '../../assets/applestore.png'
+import googleplay from '../../assets/googleplay.png'
 
 const Signup = () => {
 
@@ -44,10 +47,10 @@ const Signup = () => {
     };
 
     React.useEffect( () => {
-        if ( password.data === passwordConfirm.data){
+        if ( password.data === passwordConfirm.data ) {
             setErrorMessage( null )
         }
-    }, [passwordConfirm,password] )
+    }, [passwordConfirm, password] )
 
     React.useEffect( () => {
         if ( username.validate() ) {
@@ -62,7 +65,35 @@ const Signup = () => {
     } else {
         return (
             <div className="container-size grid-login-signup">
-                <section className="banner-side-signup"></section>
+
+                <section className="banner-side-container">
+
+
+                    <main className="slogan-login">
+
+                        <div className="slogan-text">
+                            <h1>A CARTEIRA DA NOVA GERAÇÃO.</h1>
+                            <p>É PARA TODAS AS IDADES!</p>
+
+                            <div className="apk-container">
+
+                                <a target={"_blank"} href="https://play.google.com/store/apps/details?id=com.neaglebank">
+                                    <img src={applestore} alt="" />
+                                </a>
+                                <a target={"_blank"} href="https://apps.apple.com/app/id1480105326">
+                                    <img src={googleplay} alt="" />
+                                </a>
+
+                            </div>
+
+
+                        </div>
+                        <img src={app} alt="" />
+                    </main>
+
+                </section>
+
+
 
                 <section className="form-side-signup">
                     <section className="grid-signup">

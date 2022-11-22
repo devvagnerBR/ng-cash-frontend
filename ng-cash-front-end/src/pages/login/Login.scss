@@ -1,10 +1,61 @@
 .grid-login-signup {
 	display: grid;
 	grid-template-columns: 3fr 400px;
+	background: black;
 }
 
-.banner-side {
-	background: $black;
+.banner-side-container {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	margin: 0 auto;
+	height: 100%;
+
+	img {
+		display: flex;
+		align-items: center;
+		justify-content: c;
+		width: 700px;
+	}
+}
+
+.slogan-login {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+
+	//background: pink;
+	width: 50vw;
+	height: 50vh;
+
+	h1 {
+		color: white;
+		font-size: 50px;
+		font-weight: 500;
+		font-style: italic;
+	}
+	p {
+		color: rgb(155, 155, 155);
+		padding-top: 10px;
+		font-style: italic;
+	}
+}
+
+.apk-container {
+	display: flex;
+	gap: 20px;
+	img {
+		width: 150px;
+		padding-top: 20px;
+		cursor: pointer;
+	}
+}
+.slogan-text {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
 }
 .form-side {
 	display: grid;
@@ -91,7 +142,7 @@
 		}
 	}
 
-	#errorMessage-login{
+	#errorMessage-login {
 		padding-top: 5px;
 		text-align: center;
 		font-size: 0.8rem;
@@ -102,5 +153,3 @@
 
 //font-family: 'IBM Plex Mono', monospace;
 //font-family: 'IBM Plex Sans', sans-serif;
-
-

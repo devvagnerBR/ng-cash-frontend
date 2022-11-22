@@ -5,6 +5,9 @@ import Loading from "../../components/loading/Loading"
 import PasswordValidate from "../../hooks/validadePassword"
 import UsernameValidate from "../../hooks/validateUsername"
 import { v4 as uuidv4 } from 'uuid'
+import app from '../../assets/app.png'
+import applestore from '../../assets/applestore.png'
+import googleplay from '../../assets/googleplay.png'
 
 import { GO_T0_SIGNUP, GO_TO_HOMEPAGE } from './../../routes/coordinator';
 
@@ -56,9 +59,30 @@ const Login = () => {
             <div className="container-size grid-login-signup" >
 
 
-                <section className="banner-side" >
+
+                <section className="banner-side-container" >
+
+                    <main className="slogan-login">
+
+                        <div className="slogan-text">
+                            <h1>A CARTEIRA DA NOVA GERAÇÃO.</h1>
+                            <p>É PARA TODAS AS IDADES!</p>
+
+                            <div className="apk-container">
+
+                                <a target={"_blank"} href="https://play.google.com/store/apps/details?id=com.neaglebank">
+                                    <img src={applestore} alt="" />
+                                </a>
+                                <a target={"_blank"} href="https://apps.apple.com/app/id1480105326">
+                                    <img src={googleplay} alt="" />
+                                </a>
+                       
+                            </div>
 
 
+                        </div>
+                        <img src={app} alt="" />
+                    </main>
                 </section>
 
                 <section className="form-side">
