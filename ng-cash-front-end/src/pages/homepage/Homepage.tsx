@@ -2,15 +2,21 @@ import React from 'react'
 import eyeBalance from '../../assets/icons/eyeBalance.png'
 import nglogo from '../../assets/nglogo.png'
 import logout from '../../assets/icons/logout.png'
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import History from '../balanceHistory/History'
 import Transactions from '../transactions/Transactions'
 
 const Homepage = () => {
 
+    const [stateBalance, setStateBalance] = React.useState( '' )
     const username = window.localStorage.getItem( 'username' )
+    const { pathname } = useLocation()
     const balance = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
 
+    React.useEffect( () => {
+        const step1 = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
+        setStateBalance(step1)
+    }, [pathname] )
 
 
     return (

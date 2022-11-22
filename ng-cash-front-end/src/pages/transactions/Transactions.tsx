@@ -2,18 +2,26 @@ import React from 'react'
 import arrowDown from '../../assets/icons/arrowdown.png'
 import Input from '../../components/Input/Input'
 import transaction from '../../assets/fazopix.png'
+import Loading from '../../components/loading/Loading'
+import { GO_TO_HOMEPAGE } from './../../routes/coordinator';
+import { useNavigate } from 'react-router-dom';
 const Transactions = () => {
 
-
+    const navigate = useNavigate()
     const inputs = {
         valueCashOut: '',
         userCashOut: '',
-
     }
+
+
+
+
 
     const [values, setValues] = React.useState( inputs )
     const [showConfirm, setShowConfirm] = React.useState( false )
+
     const handleChanges = ( event: React.ChangeEvent<HTMLInputElement> ) => {
+
         setValues( { ...values, [event.target.name]: event.target.value } )
     }
 
@@ -21,10 +29,32 @@ const Transactions = () => {
         setTimeout( () => {
             setShowConfirm( true )
         }, 1500 )
-
     }
 
+    const balance = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
 
+
+    const balanceNumber = Number( balance )
+    const estado = Number( values.valueCashOut )
+
+    const newBalance = ( balanceNumber - estado );
+
+
+
+    const handleSubmit = ( event: React.FormEvent<HTMLFormElement> ) => {
+        event.preventDefault()
+
+
+        if ( values.userCashOut && values.valueCashOut || newBalance > 0 ) {
+
+            window.localStorage.setItem( 'balance', JSON.stringify( newBalance ) )
+            GO_TO_HOMEPAGE( navigate )
+        }
+    }
+
+    React.useEffect( () => {
+        JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
+    }, [handleSubmit] )
 
 
     return (
@@ -35,7 +65,7 @@ const Transactions = () => {
             </header>
 
             <main className='form-container-transaction'>
-                <form className='form-container' action="">
+                <form onSubmit={handleSubmit} className='form-container' action="">
                     <Input
                         placeholder="0,00"
                         label='Qual o valor você deseja transferir?'
@@ -55,10 +85,11 @@ const Transactions = () => {
                         value={values.userCashOut}
                     />
 
-                    {showConfirm ? <div className='confirm-transaction animeLeft'>
+                    {showConfirm || newBalance > 0 ? <div className='confirm-transaction animeLeft'>
                         <p>Realizar a transferência no valor de: <span>R$ {values.valueCashOut}</span> para o <span>@wgrlz</span>?</p>
-                    </div> : null}
-                    <button className='btn'>transferir</button>
+                    </div> : <p id='message-balance'>Saldo insuficiente para realizar transferência </p>}
+                    {newBalance < 0 ? <button disabled className='btn'>transferir</button> : <button className='btn'>transferir</button>}
+
                 </form>
 
                 <aside className='banner-transaction'>

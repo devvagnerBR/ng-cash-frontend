@@ -7,7 +7,7 @@ import { convertRoutesToDataRoutes } from '@remix-run/router/dist/utils';
 
 const TransactionItem = ( { item }: any ) => {
 
-    const [time, setTime] = React.useState( '' )
+
 
 
     const convertDate = () => {
