@@ -10,6 +10,7 @@
 	height: 80%;
 	overflow: hidden;
 
+}
 	.filter-history {
 		height: 100px;
 		background: $dark-grey;
@@ -20,6 +21,7 @@
 		// .nav-filter {
 		// }
 
+	}
 		.nav-title-history {
 			display: flex;
 			align-items: end;
@@ -46,6 +48,7 @@
 			justify-content: start;
 			padding-left: 30px;
 		}
+
 		.filters-history {
 			border-radius: 4px;
 			background: $light-grey;
@@ -79,7 +82,7 @@
 				}
 			}
 		}
-	}
+	
 
 	.transactions-history {
 		height: 71vh;
@@ -111,4 +114,5 @@
 			height: 20px;
 		}
 	}
-}
+
+

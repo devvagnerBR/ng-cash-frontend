@@ -23,6 +23,7 @@ const History = () => {
 
     return (
         <div className='history-container animeLeft'>
+
             <nav className='filter-history '>
                 <section className='nav-filter-history'>
                     <nav className='filters-history'>
@@ -41,10 +42,9 @@ const History = () => {
                 </section>
             </nav>
             <main className='transactions-history'>
-
                 {render_history}
-
             </main>
+            
         </div>
     )
 }

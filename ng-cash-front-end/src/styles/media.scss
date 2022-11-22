@@ -153,4 +153,69 @@
 	.header-homepage {
 		border: none;
 	}
+
+	// HISTORY
+
+	.history-container {
+		height: auto;
+		border-radius: 10px;
+	}
+	.nav-filter-history {
+		width: 100vw;
+
+		padding-left: 0px;
+	}
+	.filters-history {
+		justify-content: space-evenly;
+		width: 100vw;
+
+		select {
+			width: 50vw;
+			margin-right: 30px;
+		}
+	}
+
+	//ITEM
+
+	.item-container-transaction {
+		width: 100vw;
+		//background: red;
+		grid-template-columns: auto auto auto;
+		padding: 0px img {
+			width: 30px;
+		}
+	}
+	.icon-transaction {
+		width: 40px;
+		padding-left: 5px;
+	}
+	.infos-transaction {
+		//background: pink;
+		max-width: 290px;
+		padding-left: 10px;
+		width: 180px;
+		height: 80px;
+		h2 {
+			font-size: 0.7rem;
+		}
+
+		h3 {
+			font-size: 0.7rem;
+		}
+		h5 {
+			font-size: 0.7rem;
+			font-weight: 400;
+		}
+	}
+
+	.values-transaction {
+		width: 450px;
+		justify-content: center;
+		align-items: stretch;
+		//background: red;
+
+		h3 {
+			font-size: 0.7rem;
+		}
+	}
 }
