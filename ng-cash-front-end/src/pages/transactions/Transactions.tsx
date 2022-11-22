@@ -86,7 +86,7 @@ const Transactions = () => {
                     />
 
                     {showConfirm || newBalance > 0 ? <div className='confirm-transaction animeLeft'>
-                        <p>Realizar a transferência no valor de: <span>R$ {values.valueCashOut}</span> para o <span>@wgrlz</span>?</p>
+                        <p>Realizar a transferência no valor de: <span>R$ {values.valueCashOut}</span> para o <span>{values.userCashOut}</span>?</p>
                     </div> : <p id='message-balance'>Saldo insuficiente para realizar transferência </p>}
                     {newBalance < 0 ? <button disabled className='btn'>transferir</button> : <button className='btn'>transferir</button>}
 
