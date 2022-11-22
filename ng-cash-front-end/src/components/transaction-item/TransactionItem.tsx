@@ -1,15 +1,14 @@
 import moneyIcon from '../../assets/icons/moneyIcon.png'
 
+
 const TransactionItem = ( { item }: any ) => {
 
     const convertDate = () => {
         const step1 = item.date_transaction
         const step2 = new Date( step1 )
         const result = step2.toLocaleDateString( 'pt-BR' )
-        return result
-
+        return result // data covnertida para DD/MM/YYYY
     }
-
 
     return (
         <div className='item-container-transaction'>

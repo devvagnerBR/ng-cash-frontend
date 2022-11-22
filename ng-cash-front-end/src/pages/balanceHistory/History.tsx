@@ -6,10 +6,12 @@ import useProtectedPage from '../../hooks/useProtectedPage';
 import { historyProps } from './../../services/interfaces/IHistory';
 
 const History = () => {
-    useProtectedPage()
-    const [selectType, setSelectType] = React.useState( '' )
 
+    useProtectedPage()
+
+    const [selectType, setSelectType] = React.useState( '' )
     const { history } = React.useContext( DataBase )
+
 
     const filteredTransactions = history && history.filter( ( x: any ) => {
         return x.type_transaction.includes( selectType )
@@ -21,12 +23,8 @@ const History = () => {
         )
     } )
 
-    React.useEffect( () => {
-            
-    }, [selectType] )
     return (
         <div className='history-container animeLeft'>
-
             <nav className='filter-history '>
                 <section className='nav-filter-history'>
                     <nav className='filters-history'>

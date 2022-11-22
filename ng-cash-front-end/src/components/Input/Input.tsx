@@ -62,12 +62,6 @@ const Input = ( { color = 'black', placeholder, error, label, onChange, name, va
             </div>
         )
     }
-
-
-
-
-
-
 }
 
 export default Input

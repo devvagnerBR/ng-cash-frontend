@@ -5,4 +5,5 @@ export interface historyProps {
     data_transaction?: string
     type_transaction?: string
     tag: string
+
 }

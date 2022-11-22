@@ -93,8 +93,6 @@ const Signup = () => {
 
                 </section>
 
-
-
                 <section className="form-side-signup">
                     <section className="grid-signup">
                         <section className="signup-title animeLeft">

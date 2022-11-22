@@ -11,8 +11,8 @@ import useProtectedPage from '../../hooks/useProtectedPage';
 
 const Transactions = () => {
 
-    const { history, setHistory } = React.useContext( DataBase )
     useProtectedPage()
+    const { history, setHistory } = React.useContext( DataBase )
     const navigate = useNavigate()
 
     const inputs = {

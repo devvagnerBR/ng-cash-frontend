@@ -16,7 +16,6 @@ const Homepage = () => {
     const [showBalance, setShowBalance] = React.useState( false )
     const navigate = useNavigate()
     const username = window.localStorage.getItem( 'username' )
-    const { pathname } = useLocation()
     const balance = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
 
 
