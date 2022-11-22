@@ -4,7 +4,7 @@ import eye from '../../assets/icons/eye.png'
 
 
 
-const Input = ( { color, placeholder, error, label, onChange, name, value, onBlur, password, type = 'text' }: inputProps ) => {
+const Input = ( { color = 'black', placeholder, error, label, onChange, name, value, onBlur, password, type = 'text' }: inputProps ) => {
 
     const [showPassword, setShowPassword] = React.useState( false )
 

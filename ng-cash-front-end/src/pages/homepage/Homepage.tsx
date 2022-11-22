@@ -2,16 +2,19 @@ import React from 'react'
 import eyeBalance from '../../assets/icons/eyeBalance.png'
 import nglogo from '../../assets/nglogo.png'
 import logout from '../../assets/icons/logout.png'
-import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import History from '../balanceHistory/History'
 import Transactions from '../transactions/Transactions'
 import { GO_T0_LOGIN } from '../../routes/coordinator'
 import { useNavigate } from 'react-router-dom';
+import useProtectedPage from '../../hooks/useProtectedPage'
 
 const Homepage = () => {
 
+    useProtectedPage()
+
     const navigate = useNavigate()
-    const [stateBalance, setStateBalance] = React.useState( '' )
+    const [stateBalance, setStateBalance] = React.useState( '' ) // VERIFICAR AQUI
     const username = window.localStorage.getItem( 'username' )
     const { pathname } = useLocation()
     const balance = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
@@ -24,8 +27,6 @@ const Homepage = () => {
 
     return (
         <div className='container-size grid-homepage'>
-
-
 
             <aside className='wallet-container-homepage'>
                 <header className='title-homepage'>
@@ -40,22 +41,29 @@ const Homepage = () => {
                         </div>
                     </main>
                     <nav className='wallet-buttons'>
-                        <NavLink to="transferencia" className='navlink' >transferir</NavLink>
-                        <NavLink to='/conta' className='navlink' >atividade</NavLink>
+                        <Link to="transferencia" className='navlink' >transferir</Link>
+                        <Link to='/conta' className='navlink' >atividade</Link>
                     </nav>
                 </section>
 
                 <section className='card-preview-homepage'>
 
+
+
+                    
+
                     <main className='card-homepage'>
                         <img src={nglogo} alt="" />
-
                         <h1>{username}</h1>
                         <h1 id='number-card-homepage'>5469 9707 0795 8552</h1>
                     </main>
                     <p>MODALIDADE: <span>DÉBITO</span> </p>
 
                 </section>
+
+
+
+
                 <section onClick={() => GO_T0_LOGIN( navigate )} className='logout-homepage'>
                     <div className='icon-logout'>
                         <img src={logout} alt="" />

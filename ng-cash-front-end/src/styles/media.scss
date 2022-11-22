@@ -40,7 +40,103 @@
 		width: 100vw;
 	}
 
-	.input p{
+	.input p {
 		font-size: 0.7rem;
+	}
+
+	//HOMEPAGE
+
+	.container-size {
+		width: 100vw;
+		height: 100vh;
+	}
+
+	.grid-homepage {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.wallet-balance-homepage {
+		display: flex;
+		width: 100vw;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 0px 20px;
+		height: 200px;
+	}
+	.balance-homepage {
+		height: 50px;
+		width: 85vw;
+
+		h4 {
+			font-size: 1rem;
+		}
+	}
+
+	.money-homepage {
+		img {
+			width: 18px;
+		}
+	}
+
+	.wallet-buttons {
+		width: 90vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 150px;
+		gap: 15px;
+
+		a {
+			min-width: 90vw;
+			width: 100vw;
+			height: 50px;
+		}
+	}
+
+	.wallet-container-homepage {
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.title-homepage {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.card-preview-homepage {
+		width: 100vw;
+		height: 550px;
+		padding: 0px;
+
+		p {
+			width: 90vw;
+			padding-top: 10px;
+		}
+	}
+
+	.card-homepage {
+		width: 90vw;
+		margin: 0px;
+
+		img {
+			top: 50px;
+		}
+
+		h1 {
+			top: 30px;
+		}
+
+		#number-card-homepage {
+			top: 30px;
+		}
 	}
 }

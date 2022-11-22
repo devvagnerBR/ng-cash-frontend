@@ -6,12 +6,13 @@ import { GO_TO_HOMEPAGE } from './../../routes/coordinator';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid'
 import { DataBase } from '../../context/GlobalContext';
+import useProtectedPage from '../../hooks/useProtectedPage';
 
 
 const Transactions = () => {
 
     const { history, setHistory } = React.useContext( DataBase )
-
+    useProtectedPage()
     const navigate = useNavigate()
 
     const inputs = {

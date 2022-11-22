@@ -2,10 +2,11 @@ import React from 'react'
 import arrowDown from '../../assets/icons/arrowdown.png'
 import TransactionItem from '../../components/transaction-item/TransactionItem'
 import { DataBase } from '../../context/GlobalContext';
+import useProtectedPage from '../../hooks/useProtectedPage';
 import { historyProps } from './../../services/interfaces/IHistory';
 
 const History = () => {
-
+    useProtectedPage()
     const [selectType, setSelectType] = React.useState( '' )
 
     const { history } = React.useContext( DataBase )
