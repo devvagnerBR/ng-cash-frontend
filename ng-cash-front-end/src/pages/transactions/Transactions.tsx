@@ -16,7 +16,7 @@ const Transactions = () => {
 
 
 
-
+    const [message, setMessage] = React.useState<string | null | undefined>( null )
     const [values, setValues] = React.useState( inputs )
     const [showConfirm, setShowConfirm] = React.useState( false )
 
@@ -29,7 +29,7 @@ const Transactions = () => {
         setTimeout( () => {
             setShowConfirm( true )
         }, 1500 )
-    }
+    } 
 
     const balance = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
 
@@ -45,8 +45,7 @@ const Transactions = () => {
         event.preventDefault()
 
 
-        if ( values.userCashOut && values.valueCashOut || newBalance > 0 ) {
-
+        if ( values.userCashOut && values.valueCashOut && newBalance > 0 ) {
             window.localStorage.setItem( 'balance', JSON.stringify( newBalance ) )
             GO_TO_HOMEPAGE( navigate )
         }
@@ -85,9 +84,9 @@ const Transactions = () => {
                         value={values.userCashOut}
                     />
 
-                    {showConfirm || newBalance > 0 ? <div className='confirm-transaction animeLeft'>
+                    {showConfirm && newBalance >= 0 ? <div className='confirm-transaction animeLeft'>
                         <p>Realizar a transferência no valor de: <span>R$ {values.valueCashOut}</span> para o <span>{values.userCashOut}</span>?</p>
-                    </div> : <p id='message-balance'>Saldo insuficiente para realizar transferência </p>}
+                    </div> : <p id='message-balance'>{message}</p>}
                     {newBalance < 0 ? <button disabled className='btn'>transferir</button> : <button className='btn'>transferir</button>}
 
                 </form>
