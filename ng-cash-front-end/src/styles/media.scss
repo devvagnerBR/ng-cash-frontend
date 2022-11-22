@@ -89,7 +89,7 @@
 		align-items: center;
 		justify-content: center;
 		height: 150px;
-		gap: 15px;
+		gap: 20px;
 
 		a {
 			min-width: 90vw;
@@ -104,6 +104,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		order: -2;
 	}
 
 	.title-homepage {
@@ -114,7 +115,7 @@
 
 	.card-preview-homepage {
 		width: 100vw;
-		height: 550px;
+		height: 230px;
 		padding: 0px;
 
 		p {
@@ -138,5 +139,14 @@
 		#number-card-homepage {
 			top: 30px;
 		}
+	}
+
+	.logout-homepage {
+		display: none;
+	}
+	.main-content-homepage {
+		order: -2;
+	}
+	.header-homepage {
 	}
 }
