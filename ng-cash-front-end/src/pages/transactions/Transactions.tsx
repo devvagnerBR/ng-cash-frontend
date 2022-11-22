@@ -2,23 +2,41 @@ import React from 'react'
 import arrowDown from '../../assets/icons/arrowdown.png'
 import Input from '../../components/Input/Input'
 import transaction from '../../assets/fazopix.png'
-import Loading from '../../components/loading/Loading'
 import { GO_TO_HOMEPAGE } from './../../routes/coordinator';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid'
+import { DataBase } from '../../context/GlobalContext';
+
+
 const Transactions = () => {
 
+    const { history, setHistory } = React.useContext( DataBase )
+
+    //console.log( 'KKKKKKKKKKKKK', history );
     const navigate = useNavigate()
+
     const inputs = {
         valueCashOut: '',
         userCashOut: '',
+        titleTransaction: ''
     }
-
-
-
 
     const [message, setMessage] = React.useState<string | null | undefined>( null )
     const [values, setValues] = React.useState( inputs )
     const [showConfirm, setShowConfirm] = React.useState( false )
+    const hoje = 1657854000000
+    const step2 = new Date( hoje )
+    const result = step2.toLocaleDateString( 'pt-BR' )
+    // console.log( result );
+
+    //console.log( Date.now() )
+
+    //console.log( { id: uuidv4(), user: values.userCashOut, value: values.valueCashOut, tag: values.titleTransaction, date_transaction: Date.now(), type_transaction: "cash-out" } )
+
+
+
+
+
 
     const handleChanges = ( event: React.ChangeEvent<HTMLInputElement> ) => {
 
@@ -29,7 +47,7 @@ const Transactions = () => {
         setTimeout( () => {
             setShowConfirm( true )
         }, 1500 )
-    } 
+    }
 
     const balance = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
 
@@ -45,7 +63,20 @@ const Transactions = () => {
         event.preventDefault()
 
 
-        if ( values.userCashOut && values.valueCashOut && newBalance > 0 ) {
+        if ( values.userCashOut && values.valueCashOut && newBalance >= 0 ) {
+
+            const newTransaction = {
+                id: uuidv4(),
+                user: values.userCashOut,
+                value: Number(values.valueCashOut),
+                tag: values.titleTransaction,
+                date_transaction: Date.now(),
+                type_transaction: "cash-out"
+            }
+
+            const copyHistory = [newTransaction, ...history]
+            setHistory( copyHistory );
+
             window.localStorage.setItem( 'balance', JSON.stringify( newBalance ) )
             GO_TO_HOMEPAGE( navigate )
         }
@@ -84,9 +115,22 @@ const Transactions = () => {
                         value={values.userCashOut}
                     />
 
-                    {showConfirm && newBalance >= 0 ? <div className='confirm-transaction animeLeft'>
-                        <p>Realizar a transferência no valor de: <span>R$ {values.valueCashOut}</span> para o <span>{values.userCashOut}</span>?</p>
-                    </div> : <p id='message-balance'>{message}</p>}
+                    {showConfirm && newBalance >= 0 ?
+
+                        <div className='confirm-transaction animeLeft'>
+                            <p>Realizar a transferência no valor de: <span>R$ {values.valueCashOut}</span> para o <span>{values.userCashOut}</span>?</p>
+                            <Input
+                                placeholder="dinheiro da pizza"
+                                label='Titulo da transferência'
+                                type="text"
+                                name="titleTransaction"
+                                color='white'
+                                onChange={handleChanges}
+                                value={values.titleTransaction}
+                            />
+                        </div> :
+                        <p id='message-balance'>{message}</p>}
+
                     {newBalance < 0 ? <button disabled className='btn'>transferir</button> : <button className='btn'>transferir</button>}
 
                 </form>

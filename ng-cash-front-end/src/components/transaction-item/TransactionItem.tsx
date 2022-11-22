@@ -1,6 +1,6 @@
 import moneyIcon from '../../assets/icons/moneyIcon.png'
-import React from 'react';
-import { convertRoutesToDataRoutes } from '@remix-run/router/dist/utils';
+import { DataBase } from '../../context/GlobalContext'
+import React from 'react'
 
 
 
@@ -9,7 +9,7 @@ const TransactionItem = ( { item }: any ) => {
 
 
 
-
+    
     const convertDate = () => {
         const step1 = item.date_transaction
         const step2 = new Date( step1 )

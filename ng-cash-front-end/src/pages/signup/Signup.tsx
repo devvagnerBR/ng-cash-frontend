@@ -5,6 +5,7 @@ import Loading from "../../components/loading/Loading";
 import PasswordValidate from "../../hooks/validadePassword";
 import UsernameValidate from "../../hooks/validateUsername";
 import { GO_T0_LOGIN, GO_TO_HOMEPAGE } from "./../../routes/coordinator";
+import { v4 as uuidv4 } from 'uuid'
 
 const Signup = () => {
 
@@ -28,7 +29,7 @@ const Signup = () => {
             window.localStorage.setItem( 'username', ( username.data ) )
             window.localStorage.setItem( 'password', ( password.data ) )
 
-            const token = Math.floor( Date.now() * Math.random() ).toString( 36 ) // token
+            const token = uuidv4() // token
             window.localStorage.setItem( 'token', token )
 
             const balanceGenerator = Math.floor( Math.random() * 200 ) + 100 // balance

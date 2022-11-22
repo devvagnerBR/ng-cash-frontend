@@ -4,6 +4,7 @@ import Input from "../../components/Input/Input"
 import Loading from "../../components/loading/Loading"
 import PasswordValidate from "../../hooks/validadePassword"
 import UsernameValidate from "../../hooks/validateUsername"
+import { v4 as uuidv4 } from 'uuid'
 
 import { GO_T0_SIGNUP, GO_TO_HOMEPAGE } from './../../routes/coordinator';
 
@@ -30,7 +31,7 @@ const Login = () => {
         } else if ( username.data === usernameLS && password.data === passwordLS ) {
             window.localStorage.setItem( 'username', username.data ) //username
             window.localStorage.setItem( 'password', password.data ) // password
-            const token = Math.floor( Date.now() * Math.random() ).toString( 36 ) // token
+            const token = uuidv4()
             window.localStorage.setItem( 'token', token )
             const balanceGenerator = Math.floor( Math.random() * 200 ) + 100
             window.localStorage.setItem( 'balance', JSON.stringify( balanceGenerator ) )

@@ -2,10 +2,13 @@ import React from 'react';
 import './styles/styles.scss'
 
 import Router from './routes/Routes';
+import Global from './context/GlobalContext';
 
 function App() {
   return (
-    <Router />
+    <Global>
+      <Router />
+    </Global>
   );
 }
 

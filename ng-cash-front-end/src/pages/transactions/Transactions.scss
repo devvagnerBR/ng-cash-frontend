@@ -41,9 +41,10 @@
 			padding: 40px;
 			max-width: 400px;
 			min-width: 400px;
-			height: 55%;
-			max-height: 550px;
+			height: 65%;
+			max-height: 750px;
 			border-radius: 0px 20px 30px 0px;
+			//background: green;
 
 			#message-balance {
 				color: $white;
@@ -84,7 +85,11 @@
 }
 
 .confirm-transaction {
-	height: 50px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	height: 170px;
 	line-height: 1.2;
 	letter-spacing: 1px;
 	p {
@@ -92,6 +97,5 @@
 		span {
 			color: $purple;
 		}
-		padding-bottom: 30px;
 	}
 }
