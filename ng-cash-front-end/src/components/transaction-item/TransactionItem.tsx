@@ -29,8 +29,9 @@ const TransactionItem = ( { item }: any ) => {
 
             <section className='values-transaction'>
                 <h2>{convertDate()}</h2>
-                <h3 style={item.type_transaction === 'cash-in' ? { color: ' green' } : { color: 'red' }} >- {item?.value.toLocaleString( 'pt-BR', { style: 'currency', currency: 'BRL' } )}</h3>
+                <h3 style={item.type_transaction === 'cash-in' ? { color: ' green' } : { color: 'red' }}>{item?.value.toLocaleString( 'pt-BR', { style: 'currency', currency: 'BRL' } )}</h3>
             </section>
+
 
         </div >
     )

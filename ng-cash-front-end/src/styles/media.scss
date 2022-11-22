@@ -60,7 +60,7 @@
 
 	.wallet-balance-homepage {
 		display: flex;
-		width: 100vw;
+		width: 10%;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
@@ -178,25 +178,33 @@
 	//ITEM
 
 	.item-container-transaction {
-		width: 100vw;
+		width: 100%;
 		//background: red;
-		grid-template-columns: auto auto auto;
-		padding: 0px img {
+		grid-template-columns: 1vw 10px 10v;
+
+		padding: 0px;
+
+		img {
 			width: 30px;
 		}
 	}
 	.icon-transaction {
-		width: 40px;
-		padding-left: 5px;
+		//background: tomato;
+		width: 15vw;
 	}
+
 	.infos-transaction {
-		//background: pink;
-		max-width: 290px;
-		padding-left: 10px;
-		width: 180px;
+		//background: blue;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: center;
+		max-width: 100%;
+		padding-left: 0px;
 		height: 80px;
+
 		h2 {
-			font-size: 0.7rem;
+			font-size: 0.75rem;
 		}
 
 		h3 {
@@ -209,11 +217,15 @@
 	}
 
 	.values-transaction {
-		width: 450px;
-		justify-content: center;
-		align-items: stretch;
-		//background: red;
+		display: flex;
+		width: 25vw;
+		justify-content: space-evenly;
+		align-items: center;
+		//background: yellow;
 
+		h2 {
+			font-size: 0.7rem;
+		}
 		h3 {
 			font-size: 0.7rem;
 		}
