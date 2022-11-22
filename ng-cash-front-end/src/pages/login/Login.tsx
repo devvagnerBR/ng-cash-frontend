@@ -25,8 +25,12 @@ const Login = () => {
         event.preventDefault()
         if ( username.validate() && password.validate() ) {
 
-            window.localStorage.setItem( 'username', JSON.stringify( username.data ) )
-            window.localStorage.setItem( 'password', JSON.stringify( password.data ) )
+            window.localStorage.setItem( 'username', username.data )
+            window.localStorage.setItem( 'password', password.data )
+            const token = Math.floor( Date.now() * Math.random() ).toString( 36 )
+            window.localStorage.setItem( 'token', token )
+            const pass = Math.floor( Math.random() * 200 ) + 100
+            window.localStorage.setItem( 'balance', JSON.stringify( pass ) )
             setShowLoading( true )
             setTimeout( () => {
                 GO_TO_HOMEPAGE( navigate )

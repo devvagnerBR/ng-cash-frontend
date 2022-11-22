@@ -8,8 +8,8 @@ import Transactions from '../transactions/Transactions'
 
 const Homepage = () => {
 
-    const username = JSON.parse( `${localStorage.getItem( 'username' )}` );
-
+    const username = window.localStorage.getItem( 'username' )
+    const balance = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
 
 
 
@@ -26,7 +26,7 @@ const Homepage = () => {
                     <main className='balance-homepage'>
                         <h4>saldo disponível</h4>
                         <div className='money-homepage'>
-                            <h3>R$ 254,88</h3>
+                            <h3>{balance.toLocaleString( 'pt-BR', { style: 'currency', currency: 'BRL' } )}</h3>
                             <img src={eyeBalance} alt="show balance" />
                         </div>
                     </main>
@@ -41,7 +41,7 @@ const Homepage = () => {
                     <main className='card-homepage'>
                         <img src={nglogo} alt="" />
 
-                        <h1>WAGNER GUIMARAES</h1>
+                        <h1>{username}</h1>
                         <h1 id='number-card-homepage'>5469 9707 0795 8552</h1>
                     </main>
                     <p>MODALIDADE: <span>DÉBITO</span> </p>

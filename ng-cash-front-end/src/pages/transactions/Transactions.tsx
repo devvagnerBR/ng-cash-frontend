@@ -4,6 +4,29 @@ import Input from '../../components/Input/Input'
 import transaction from '../../assets/fazopix.png'
 const Transactions = () => {
 
+
+    const inputs = {
+        valueCashOut: '',
+        userCashOut: '',
+
+    }
+
+    const [values, setValues] = React.useState( inputs )
+    const [showConfirm, setShowConfirm] = React.useState( false )
+    const handleChanges = ( event: React.ChangeEvent<HTMLInputElement> ) => {
+        setValues( { ...values, [event.target.name]: event.target.value } )
+    }
+
+    if ( values.userCashOut && values.valueCashOut ) {
+        setTimeout( () => {
+            setShowConfirm( true )
+        }, 1500 )
+
+    }
+
+
+
+
     return (
         <div className='container-transactions animeLeft'>
             <header className='header-transactions'>
@@ -17,27 +40,24 @@ const Transactions = () => {
                         placeholder="0,00"
                         label='Qual o valor você deseja transferir?'
                         type="number"
-                        name="username"
+                        name="valueCashOut"
                         color='white'
+                        onChange={handleChanges}
+                        value={values.valueCashOut}
                     />
                     <Input
                         placeholder="@Neox"
                         label='Para quem você vai transferir?'
                         type="text"
-                        name="username"
+                        name="userCashOut"
                         color='white'
-                    />
-                    <Input
-                        placeholder="@Neox"
-                        label='Nome de usuário'
-                        type="text"
-                        name="username"
-                        color='white'
+                        onChange={handleChanges}
+                        value={values.userCashOut}
                     />
 
-                    <div className='confirm-transaction'>
-                        <p>Realizar a transferência no valor de: <span>R$ 157,25</span> para o <span>@wgrlz</span>?</p>
-                    </div>
+                    {showConfirm ? <div className='confirm-transaction animeLeft'>
+                        <p>Realizar a transferência no valor de: <span>R$ {values.valueCashOut}</span> para o <span>@wgrlz</span>?</p>
+                    </div> : null}
                     <button className='btn'>transferir</button>
                 </form>
 

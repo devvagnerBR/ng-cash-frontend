@@ -35,7 +35,7 @@ const History = () => {
 
         //console.log( datacertinha );
 
-        console.log( x.date_transaction );
+        //console.log( x.date_transaction );
 
         // return 
         return x.type_transaction.includes( selectType )
@@ -46,6 +46,7 @@ const History = () => {
             <TransactionItem item={item} key={index} />
         )
     } )
+
 
 
 

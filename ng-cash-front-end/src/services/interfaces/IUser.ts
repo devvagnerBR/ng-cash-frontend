@@ -38,4 +38,5 @@ export interface inputProps {
     password?: boolean
     showPass?: any
     color?: 'black' | 'white'
+    value?: string 
 }

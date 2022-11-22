@@ -4,7 +4,7 @@ import eye from '../../assets/icons/eye.png'
 
 
 
-const Input = ( { color, placeholder, error, label, onChange, name, onBlur, password, type = 'text' }: inputProps ) => {
+const Input = ( { color, placeholder, error, label, onChange, name, value, onBlur, password, type = 'text' }: inputProps ) => {
 
     const [showPassword, setShowPassword] = React.useState( false )
 
@@ -27,6 +27,7 @@ const Input = ( { color, placeholder, error, label, onChange, name, onBlur, pass
                     type={type}
                     onChange={onChange}
                     onBlur={onBlur}
+                    value={value}
                 />
                 <p>{error}</p>
             </div>
@@ -51,6 +52,7 @@ const Input = ( { color, placeholder, error, label, onChange, name, onBlur, pass
                         type={showPassword ? 'text' : 'password'}
                         onChange={onChange}
                         onBlur={onBlur}
+                        value={value}
                     />
                     <div className='eye-icon'>
                         <img onClick={() => setShowPassword( !showPassword )} src={eye} alt="icon" />
