@@ -235,26 +235,25 @@
 	// TRANSACTIONS
 
 	.container-transactions {
-		height: 85vh;
+		min-height: 120vh;
+		margin: 0px;
 		//background: tomato;
 	}
 	.form-container-transaction {
-		display: flex;
-		align-items: stretch;
-		justify-content: start;
-		flex-direction: column;
-		//background: red;
-		width: 90vw;
-		height: 80vh;
+
+		background: $light-grey;
+
+		height: fit-content;
 	}
 
 	.form-container {
-		display: flex;
-		flex-direction: column;
+
+
 		//background: green;
-		width: 10vw;
+		height: 35%;
+		width: max-content;
 		max-width: 10vw;
-		min-width: 70vw;
+		min-width: 80vw;
 	}
 
 	.banner-transaction {
@@ -264,5 +263,6 @@
 	.confirm-transaction {
 		//background: orange;
 		padding-top: 20px;
+		height: 100%;
 	}
 }
