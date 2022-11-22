@@ -7,7 +7,7 @@ import { historyProps } from './../../services/interfaces/IHistory';
 const History = () => {
 
     const [selectType, setSelectType] = React.useState( '' )
-    const [selectMonth, setSelectMonth] = React.useState( Number( '' ) )
+
 
     const history =
         [
@@ -26,18 +26,6 @@ const History = () => {
         ]
 
     const filteredTransactions = history && history.filter( ( x ) => {
-        // const datacertinha = new Date( x.date_transaction ).getMonth() 
-
-        const datacertinha = new Date( x.date_transaction )
-
-        // console.log( new Date( x.date_transaction ) );
-
-
-        //console.log( datacertinha );
-
-        //console.log( x.date_transaction );
-
-        // return 
         return x.type_transaction.includes( selectType )
     } )
 
@@ -46,18 +34,6 @@ const History = () => {
             <TransactionItem item={item} key={index} />
         )
     } )
-
-
-
-
-
-
-
-
-    console.log( selectMonth );
-
-
-
 
     return (
         <div className='history-container animeLeft'>
@@ -70,16 +46,6 @@ const History = () => {
                             <option value="">todos</option>
                             <option value="cash-in">recebido</option>
                             <option value="cash-out">transferido</option>
-                        </select>
-                        <select onClick={( e: any ) => setSelectMonth( e.target.value )} name="periodo" id="periodo">
-                            <option disabled value="">filtrar periodo</option>
-                            <option value="5">Maio</option>
-                            <option value="6">Junho</option>
-                            <option value="7">Julho</option>
-                            <option value="8">Agosto</option>
-                            <option value="9">Setembro</option>
-                            <option value="10">Novembro</option>
-
                         </select>
                     </nav>
                 </section>

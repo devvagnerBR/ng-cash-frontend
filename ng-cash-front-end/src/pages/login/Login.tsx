@@ -12,6 +12,7 @@ import { GO_T0_SIGNUP, GO_TO_HOMEPAGE } from './../../routes/coordinator';
 const Login = () => {
 
     const [showLoading, setShowLoading] = React.useState( false )
+    const [errorMessage, setErrorMessage] = React.useState<string | null>( null )
 
     const username = UsernameValidate()
     const password = PasswordValidate()
@@ -19,28 +20,30 @@ const Login = () => {
 
 
     const handleSubmit = ( event: React.FormEvent<HTMLFormElement> ) => {
-
-
-
+        const usernameLS = window.localStorage.getItem( 'username' )
+        const passwordLS = window.localStorage.getItem( 'password' )
         event.preventDefault()
-        if ( username.validate() && password.validate() ) {
 
-            window.localStorage.setItem( 'username', username.data )
-            window.localStorage.setItem( 'password', password.data )
-            const token = Math.floor( Date.now() * Math.random() ).toString( 36 )
+        if ( username.data !== usernameLS || password.data !== passwordLS ) {
+            setErrorMessage( `usuario ou senha incorretos` );
+
+        } else if ( username.data === usernameLS && password.data === passwordLS ) {
+            window.localStorage.setItem( 'username', username.data ) //username
+            window.localStorage.setItem( 'password', password.data ) // password
+            const token = Math.floor( Date.now() * Math.random() ).toString( 36 ) // token
             window.localStorage.setItem( 'token', token )
-            const pass = Math.floor( Math.random() * 200 ) + 100
-            window.localStorage.setItem( 'balance', JSON.stringify( pass ) )
+            const balanceGenerator = Math.floor( Math.random() * 200 ) + 100
+            window.localStorage.setItem( 'balance', JSON.stringify( balanceGenerator ) )
             setShowLoading( true )
             setTimeout( () => {
                 GO_TO_HOMEPAGE( navigate )
             }, 2000 )
-
         }
     }
 
-    //
-
+    React.useEffect( () => {
+        setErrorMessage( null )
+    }, [username.data, password.data] )
 
     if ( showLoading ) {
         return (
@@ -81,11 +84,11 @@ const Login = () => {
                                 password={true}
                                 {...password}
                             />
-
-                            <section className="btn-login-container">
+                            <p id="errorMessage-login">{errorMessage}</p>
+                            {<section className="btn-login-container">
                                 <p>ainda não tem uma conta? <span onClick={() => GO_T0_SIGNUP( navigate )}>criar agora!</span></p>
                                 <button className="btn">entrar</button>
-                            </section>
+                            </section>}
 
                         </form>
                     </section>

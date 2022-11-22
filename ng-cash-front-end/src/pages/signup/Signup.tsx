@@ -7,20 +7,33 @@ import UsernameValidate from "../../hooks/validateUsername";
 import { GO_T0_LOGIN, GO_TO_HOMEPAGE } from "./../../routes/coordinator";
 
 const Signup = () => {
+
+    const navigate = useNavigate();
+
     const username = UsernameValidate();
     const password = PasswordValidate();
     const passwordConfirm = PasswordValidate();
-    const navigate = useNavigate();
+
     const [showInputPassword, setShowInputPassword] = React.useState( false );
     const [showLoading, setShowLoading] = React.useState( false )
+    const [errorMessage, setErrorMessage] = React.useState<string | null>( null )
+
 
     const handleSubmit = ( event: React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault();
+        if ( password.data !== passwordConfirm.data ) {
+            setErrorMessage( 'Senhas precisam ser iguais' )
+        } else if ( username.validate() && password.validate() && password.data === passwordConfirm.data ) {
+            setErrorMessage( null )
+            window.localStorage.setItem( 'username', ( username.data ) )
+            window.localStorage.setItem( 'password', ( password.data ) )
 
-        if ( username.validate() && password.validate() && password.data === passwordConfirm.data ) {
+            const token = Math.floor( Date.now() * Math.random() ).toString( 36 ) // token
+            window.localStorage.setItem( 'token', token )
 
-            window.localStorage.setItem( 'username', JSON.stringify( username.data ) )
-            window.localStorage.setItem( 'password', JSON.stringify( password.data ) )
+            const balanceGenerator = Math.floor( Math.random() * 200 ) + 100 // balance
+            window.localStorage.setItem( 'balance', JSON.stringify( balanceGenerator ) )
+
             setShowLoading( true )
             setTimeout( () => {
                 GO_TO_HOMEPAGE( navigate )
@@ -28,6 +41,12 @@ const Signup = () => {
 
         }
     };
+
+    React.useEffect( () => {
+        if ( password.data === passwordConfirm.data){
+            setErrorMessage( null )
+        }
+    }, [passwordConfirm,password] )
 
     React.useEffect( () => {
         if ( username.validate() ) {
@@ -88,7 +107,9 @@ const Signup = () => {
                                             name="passwordConfirm"
                                             password={true}
                                             {...passwordConfirm}
+
                                         />
+                                        <p id="errorMessage-signup">{errorMessage}</p>
                                     </div>
                                 ) : null}
                             </section>
