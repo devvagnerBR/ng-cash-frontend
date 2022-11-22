@@ -23,7 +23,6 @@ const Homepage = () => {
 
     return (
         <div className='container-size grid-homepage'>
-
             <aside className='wallet-container-homepage'>
                 <header className='title-homepage'>
                     <h1>carteira</h1>
@@ -43,11 +42,6 @@ const Homepage = () => {
                 </section>
 
                 <section className='card-preview-homepage'>
-
-
-
-
-
                     <main className='card-homepage'>
                         <img src={nglogo} alt="" />
                         <h1>{username}</h1>
@@ -56,10 +50,6 @@ const Homepage = () => {
                     <p>MODALIDADE: <span>DÉBITO</span> </p>
 
                 </section>
-
-
-
-
                 <section onClick={() => GO_T0_LOGIN( navigate )} className='logout-homepage'>
                     <div className='icon-logout'>
                         <img src={logout} alt="" />
@@ -67,7 +57,6 @@ const Homepage = () => {
                     </div>
                 </section>
             </aside>
-
             <main className='main-content-homepage'>
 
                 <header className='header-homepage'>
@@ -79,8 +68,6 @@ const Homepage = () => {
                     <Route path='/' element={<History />} />
                     <Route path='transferencia' element={<Transactions />} />
                 </Routes>
-
-
             </main>
         </div>
     )

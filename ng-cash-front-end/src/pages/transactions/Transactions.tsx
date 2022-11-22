@@ -87,7 +87,7 @@ const Transactions = () => {
             </header>
 
             <main className='form-container-transaction'>
-                <form onSubmit={handleSubmit} className='form-container' action="">
+                <form onSubmit={handleSubmit} className='form-container'>
                     <Input
                         placeholder="0,00"
                         label='Qual o valor você deseja transferir?'
@@ -110,7 +110,12 @@ const Transactions = () => {
                     {showConfirm && newBalance >= 0 ?
 
                         <div className='confirm-transaction animeLeft'>
-                            <p>Realizar a transferência no valor de: <span>R$ {values.valueCashOut}</span> para o <span>{values.userCashOut}</span>?</p>
+                            <p>Realizar a transferência no valor de 
+                                <span> R$ {values.valueCashOut}
+                                </span> para o <span>
+                                    {values.userCashOut}
+                                </span>?
+                            </p>
                             <Input
                                 placeholder="dinheiro da pizza"
                                 label='Titulo da transferência'

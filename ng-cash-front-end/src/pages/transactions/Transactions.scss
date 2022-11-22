@@ -4,66 +4,65 @@
 	height: 80vh;
 	margin: 20px;
 	border-radius: 5px;
+}
 
-	.header-transactions {
-		height: 40px;
-		width: 100%;
-		background: $dark-grey;
+.header-transactions {
+	height: 40px;
+	width: 100%;
+	background: $dark-grey;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+
+	h1 {
+		color: white;
+		height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: end;
-
-		h1 {
-			color: white;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: end;
-			padding-right: 20px;
-			font-weight: 400;
-			text-align: end;
-		}
-
-		img {
-			width: 19px;
-			padding-right: 30px;
-		}
+		padding-right: 20px;
+		font-weight: 400;
+		text-align: end;
 	}
 
-	.form-container-transaction {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		width: 100%;
-		height: 95%;
-		position: absolute;
+	img {
+		width: 19px;
+		padding-right: 30px;
+	}
+}
 
-		.form-container {
-			padding: 40px;
-			max-width: 400px;
-			min-width: 400px;
-			height: 65%;
-			max-height: 750px;
-			border-radius: 0px 20px 30px 0px;
-			//background: green;
+.form-container-transaction {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	width: 100%;
+	height: 95%;
+	position: absolute;
+}
+.form-container {
+	padding: 40px;
+	max-width: 400px;
+	min-width: 400px;
+	height: 65%;
+	max-height: 750px;
+	border-radius: 0px 20px 30px 0px;
+	//background: green;
 
-			#message-balance {
-				color: $white;
-				font-size: 0.8rem;
-				text-align: center;
-				padding-bottom: 15px;
-			}
-		}
+	#message-balance {
+		color: $white;
+		font-size: 0.8rem;
+		text-align: center;
+		padding-bottom: 15px;
+	}
+}
 
-		.banner-transaction {
-			display: flex;
-			align-items: end;
-			justify-content: center;
-			img {
-				width: 450px;
-				position: relative;
-				bottom: -30px;
-			}
-		}
+.banner-transaction {
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	img {
+		width: 450px;
+		position: relative;
+		bottom: -30px;
 	}
 }
 
@@ -85,7 +84,6 @@
 }
 
 .confirm-transaction {
-
 	display: flex;
 	flex-direction: column;
 	gap: 30px;

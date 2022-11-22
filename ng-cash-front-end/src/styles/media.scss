@@ -149,6 +149,7 @@
 	.main-content-homepage {
 		order: -2;
 		border: none;
+		height: 100vh;
 	}
 	.header-homepage {
 		border: none;
@@ -229,5 +230,39 @@
 		h3 {
 			font-size: 0.7rem;
 		}
+	}
+
+	// TRANSACTIONS
+
+	.container-transactions {
+		height: 85vh;
+		//background: tomato;
+	}
+	.form-container-transaction {
+		display: flex;
+		align-items: stretch;
+		justify-content: start;
+		flex-direction: column;
+		//background: red;
+		width: 90vw;
+		height: 80vh;
+	}
+
+	.form-container {
+		display: flex;
+		flex-direction: column;
+		//background: green;
+		width: 10vw;
+		max-width: 10vw;
+		min-width: 70vw;
+	}
+
+	.banner-transaction {
+		display: none;
+	}
+
+	.confirm-transaction {
+		//background: orange;
+		padding-top: 20px;
 	}
 }
