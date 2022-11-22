@@ -127,6 +127,8 @@
 	.card-homepage {
 		width: 90vw;
 		margin: 0px;
+		height: 300px;
+		margin-top: 20px;
 
 		img {
 			top: 50px;
@@ -146,7 +148,10 @@
 	}
 	.main-content-homepage {
 		order: -2;
+		border: none;
 	}
 	.header-homepage {
+
+		border: none;
 	}
 }
