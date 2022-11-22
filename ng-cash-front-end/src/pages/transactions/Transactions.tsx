@@ -12,7 +12,6 @@ const Transactions = () => {
 
     const { history, setHistory } = React.useContext( DataBase )
 
-    //console.log( 'KKKKKKKKKKKKK', history );
     const navigate = useNavigate()
 
     const inputs = {
@@ -27,14 +26,6 @@ const Transactions = () => {
     const hoje = 1657854000000
     const step2 = new Date( hoje )
     const result = step2.toLocaleDateString( 'pt-BR' )
-    // console.log( result );
-
-    //console.log( Date.now() )
-
-    //console.log( { id: uuidv4(), user: values.userCashOut, value: values.valueCashOut, tag: values.titleTransaction, date_transaction: Date.now(), type_transaction: "cash-out" } )
-
-
-
 
 
 
@@ -62,13 +53,13 @@ const Transactions = () => {
     const handleSubmit = ( event: React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault()
 
-
-        if ( values.userCashOut && values.valueCashOut && newBalance >= 0 ) {
+        const token = window.localStorage.getItem( 'token' )
+        if ( values.userCashOut && values.valueCashOut && newBalance >= 0 && token ) {
 
             const newTransaction = {
                 id: uuidv4(),
                 user: values.userCashOut,
-                value: Number(values.valueCashOut),
+                value: Number( values.valueCashOut ),
                 tag: values.titleTransaction,
                 date_transaction: Date.now(),
                 type_transaction: "cash-out"

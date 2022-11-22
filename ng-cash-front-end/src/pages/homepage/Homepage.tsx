@@ -5,9 +5,12 @@ import logout from '../../assets/icons/logout.png'
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import History from '../balanceHistory/History'
 import Transactions from '../transactions/Transactions'
+import { GO_T0_LOGIN } from '../../routes/coordinator'
+import { useNavigate } from 'react-router-dom';
 
 const Homepage = () => {
 
+    const navigate = useNavigate()
     const [stateBalance, setStateBalance] = React.useState( '' )
     const username = window.localStorage.getItem( 'username' )
     const { pathname } = useLocation()
@@ -15,7 +18,7 @@ const Homepage = () => {
 
     React.useEffect( () => {
         const step1 = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
-        setStateBalance(step1)
+        setStateBalance( step1 )
     }, [pathname] )
 
 
@@ -53,7 +56,7 @@ const Homepage = () => {
                     <p>MODALIDADE: <span>DÉBITO</span> </p>
 
                 </section>
-                <section className='logout-homepage'>
+                <section onClick={() => GO_T0_LOGIN( navigate )} className='logout-homepage'>
                     <div className='icon-logout'>
                         <img src={logout} alt="" />
                         <a href="">SAIR</a>
