@@ -21,6 +21,9 @@ const History = () => {
         )
     } )
 
+    React.useEffect( () => {
+            
+    }, [selectType] )
     return (
         <div className='history-container animeLeft'>
 
@@ -44,7 +47,7 @@ const History = () => {
             <main className='transactions-history'>
                 {render_history}
             </main>
-            
+
         </div>
     )
 }

@@ -13,16 +13,12 @@ const Homepage = () => {
 
     useProtectedPage()
 
+    const [showBalance, setShowBalance] = React.useState( false )
     const navigate = useNavigate()
-    const [stateBalance, setStateBalance] = React.useState( '' ) // VERIFICAR AQUI
     const username = window.localStorage.getItem( 'username' )
     const { pathname } = useLocation()
     const balance = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
 
-    React.useEffect( () => {
-        const step1 = JSON.parse( `${window.localStorage.getItem( 'balance' )}` )
-        setStateBalance( step1 )
-    }, [pathname] )
 
 
     return (
@@ -36,8 +32,8 @@ const Homepage = () => {
                     <main className='balance-homepage'>
                         <h4>saldo disponível</h4>
                         <div className='money-homepage'>
-                            <h3>{balance.toLocaleString( 'pt-BR', { style: 'currency', currency: 'BRL' } )}</h3>
-                            <img src={eyeBalance} alt="show balance" />
+                            {showBalance ? <h3>{balance.toLocaleString( 'pt-BR', { style: 'currency', currency: 'BRL' } )}</h3> : <h3 id='bluer-text'>00000</h3>}
+                            <img onClick={() => setShowBalance( !showBalance )} src={eyeBalance} alt="show balance" />
                         </div>
                     </main>
                     <nav className='wallet-buttons'>
@@ -50,7 +46,7 @@ const Homepage = () => {
 
 
 
-                    
+
 
                     <main className='card-homepage'>
                         <img src={nglogo} alt="" />
