@@ -1,4 +1,3 @@
-
 # NG CASH [Front-End]
 
 O NG Cash é um software desenvolvido em React, SASS e typescript, criado como um teste seletivo para simular um banco digital. O objetivo deste projeto é fornecer uma plataforma para os clientes criarem uma conta, verificar saldo, histórico de transações e realizar transações financeiras.
